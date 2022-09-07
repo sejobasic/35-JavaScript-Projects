@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
 :root {
-  --left-bg-color: rgba(236,182,1, 0.4);
-  --right-bg-color: rgba(221,54,55, 0.4);
+  --left-bg-color: rgba(236,182,1, 0.5);
+  --right-bg-color: rgba(221,54,55, 0.5);
+  --left-btn-color: rgba(236,182,1, 1);
+  --right-btn-color: rgba(221,54,55, 1);
 }
 
 * {
@@ -14,6 +16,43 @@ body {
   height: 100vh;
   overflow: hidden;
   margin: 0;
+}
+
+h1 {
+  position: absolute;
+  font-size: 4rem;
+  color: #fff;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.btn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  top: 40%;
+  transform: translateX(-50%);
+  text-decoration: none;
+  color: #fff;
+  border-radius: 10px;
+  border: #fff solid 0.1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 15rem;
+  padding: 1.5rem;
+}
+
+.split.left .btn:hover {
+  background-color: var(--left-btn-color);
+}
+
+.split.right .btn:hover {
+  background-color: var(--right-btn-color);
 }
 
 .container {
