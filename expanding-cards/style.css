@@ -38,7 +38,7 @@ body {
   left: 20px;
   margin: 0;
   font-size: 24px;
-  color: #fff;
+  color: whitesmoke;
   opacity: 0;
 }
 
@@ -48,6 +48,7 @@ body {
 
 .panel.active h3 {
   opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
 }
 
 /* Only show a specific number of cards at this size */
