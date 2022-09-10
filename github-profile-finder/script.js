@@ -9,10 +9,25 @@ const search = document.getElementById('search')
 async function getUser(username) {
   try {
     const { data } = await axios(APIURL + username)
-    
+
     createUserCard(data)
+    getRepos(username)
   } catch (err) {
-    console.log(err)
+    // If user does not exist render error card
+    if (err.response.status == 404) {
+      createErrorCard('User not found')
+    }
+  }
+}
+
+// Get users repos
+async function getRepos(username) {
+  try {
+    const { data } = await axios(APIURL + username + '/repos?sort=created')
+
+    addReposToCard(data)
+  } catch (err) {
+    createErrorCard('Problem fetching user repos')
   }
 }
 
@@ -31,20 +46,39 @@ function createUserCard(user) {
         <p>${user.bio}</p>
 
         <ul>
-          <li>${user.followers_url} <strong>Followers</strong></li>
-          <li>${user.following_url} <strong>Following</strong></li>
+          <li>${user.followers} <strong>Followers</strong></li>
+          <li>${user.following} <strong>Following</strong></li>
           <li>${user.public_repos} <strong>Repos</strong></li>
         </ul>
 
-        <div id="repos">
-          <a href="#" class="repos"></a>
-          <a href="#" class="repos">Repo 2</a>
-          <a href="#" class="repos">Repo 3</a>
-        </div>
+        <div id="repos"></div>
       </div>
     </div>
   `
   main.innerHTML = cardHtml
+}
+
+function createErrorCard(msg) {
+  const errorCard = `
+    <div class='card'>
+      <h1>${msg}</h1>
+    </div>
+  `
+  main.innerHTML = errorCard
+}
+
+function addReposToCard(repos) {
+  const reposElement = document.getElementById('repos')
+
+  repos.slice(0, 10).forEach((repo) => {
+    const repoLink = document.createElement('a')
+    repoLink.classList.add('repo')
+    repoLink.href = repo.html_url
+    repoLink.target = '_blank'
+    repoLink.innerText = repo.name
+
+    reposElement.appendChild(repoLink)
+  })
 }
 
 form.addEventListener('submit', (e) => {
