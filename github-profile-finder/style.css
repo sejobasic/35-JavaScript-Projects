@@ -9,6 +9,7 @@ body {
   color: #fff;
   font-family: 'Muli', sans-serif;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -22,8 +23,8 @@ body {
 }
 
 .user-form input {
-  display: block;
   width: 100%;
+  display: block;
   background-color: rgb(50, 41, 96);
   border: none;
   border-radius: 10px;
@@ -36,3 +37,78 @@ body {
     0 15px 40px rgba(0, 0, 0, 0.1);
 }
 
+.user-form input:focus {
+  outline: none;
+}
+
+.user-form input::placeholder {
+  color: #bbb;
+}
+
+.card {
+  display: flex;
+  max-width: 800px;
+  background-color: rgb(50, 41, 96);
+  border-radius: 20px;
+  box-shadow: 0 5px 10px rgba(154, 160 185, 0.05),
+  0 15px 40px rgba(0, 0, 0, 0.1);
+  padding: 3rem;
+  margin: 0 1.5rem;
+}
+
+.avatar {
+  border-radius: 50%;
+  border: 5px solid rgb(94, 78, 184);
+  height: 150px;
+  width: 150px;
+}
+
+.user-info {
+  margin-left: 2rem;
+  color: #eee;
+}
+
+.user-info h2 {
+  margin-top: 0;
+}
+
+.user-info ul {
+  max-width: 400px;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.user-info ul li {
+  display: flex;
+  align-items: center;
+}
+
+.user-info ul li strong {
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
+}
+
+.repos {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background-color: rgb(94, 78, 184);
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+@media(max-width: 500px) {
+  .card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .user-form {
+    max-width: 400px;
+  }
+}
