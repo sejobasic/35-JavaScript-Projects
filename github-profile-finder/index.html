@@ -1,0 +1,49 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Github Profile Finder</title>
+  </head>
+  <body>
+    <form class="user-form" id="form">
+      <input type="text" id="search" placeholder="Search a Github User" />
+    </form>
+    <main id="main">
+      <div class="card">
+        <img
+          src="https://randomuser.me/api/portraits/men/30.jpg"
+          alt="user profile picture"
+          class="avatar"
+        />
+      </div>
+      <div class="user-info">
+        <h2>johndoe</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, culpa! Consequatur maxime quam nobis nulla praesentium ullam doloribus, corrupti earum cupiditate veritatis illum perspiciatis rem expedita aspernatur voluptates ea unde!</p>
+
+        <ul>
+          <li>300 <strong>Followers</strong></li>
+          <li>100 <strong>Following</strong></li>
+          <li>30 <strong>Repos</strong></li>
+        </ul>
+
+        <div id="repos">
+          <a href="#" class="repos">Repo 1</a>
+          <a href="#" class="repos">Repo 2</a>
+          <a href="#" class="repos">Repo 3</a>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
