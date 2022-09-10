@@ -9,7 +9,8 @@ const search = document.getElementById('search')
 async function getUser(username) {
   try {
     const { data } = await axios(APIURL + username)
-    console.log(data)
+    
+    createUserCard(data)
   } catch (err) {
     console.log(err)
   }
@@ -20,23 +21,23 @@ function createUserCard(user) {
     <div class="card">
       <div>
         <img
-          src="https://randomuser.me/api/portraits/men/30.jpg"
+          src="${user.avatar_url}"
           alt="user profile picture"
           class="avatar"
         />
       </div>
       <div class="user-info">
-        <h2>johndoe</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <h2>${user.name}</h2>
+        <p>${user.bio}</p>
 
         <ul>
-          <li>300 <strong>Followers</strong></li>
-          <li>100 <strong>Following</strong></li>
-          <li>30 <strong>Repos</strong></li>
+          <li>${user.followers_url} <strong>Followers</strong></li>
+          <li>${user.following_url} <strong>Following</strong></li>
+          <li>${user.public_repos} <strong>Repos</strong></li>
         </ul>
 
         <div id="repos">
-          <a href="#" class="repos">Repo 1</a>
+          <a href="#" class="repos"></a>
           <a href="#" class="repos">Repo 2</a>
           <a href="#" class="repos">Repo 3</a>
         </div>
