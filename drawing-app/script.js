@@ -1,8 +1,14 @@
 const canvas = document.getElementById('canvas')
+const increase = document.getElementById('increase')
+const decrease = document.getElementById('decrease')
+const clear = document.getElementById('clear')
+const colorSelector = document.getElementById('color')
+const sizeSelector = document.getElementById('size')
+
 const context = canvas.getContext('2d')
 
 //init
-let size = 20
+let size = 10
 let isPressed = false
 let color = 'black'
 let x
@@ -58,3 +64,38 @@ function drawLine(x1, y1, x2, y2) {
   context.lineWidth = size * 2
   context.stroke()
 }
+
+function updateSizeNum() {
+  sizeSelector.innerText = size
+}
+
+// change color
+colorSelector.addEventListener('change', (e) => {
+  color = e.target.value
+})
+
+// increase pen width
+increase.addEventListener('click', () => {
+  size += 5
+
+  if (size > 50) {
+    size = 50
+  }
+
+  updateSizeNum()
+})
+
+// decrease pen width
+decrease.addEventListener('click', () => {
+  size -= 5
+
+  if (size < 5) {
+    size = 5
+  }
+
+  updateSizeNum()
+})
+
+clear.addEventListener('click', () => {
+  context.clearRect(0, 0, canvas.width, canvas.height)
+})
