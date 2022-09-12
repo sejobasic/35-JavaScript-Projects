@@ -29,6 +29,19 @@ canvas.addEventListener('mouseup', (e) => {
   drawCircle()
 })
 
+canvas.addEventListener('mousemove', (e) => {
+  if (isPressed) {
+    const x2 = e.offsetX
+    const y2 = e.offsetY
+
+    drawCircle(x2, y2)
+    drawLine(x, y, x2, y2)
+
+    x = x2
+    y = y2
+  }
+})
+
 // Path function
 function drawCircle(x, y) {
   context.beginPath()
@@ -42,6 +55,6 @@ function drawLine(x1, y1, x2, y2) {
   context.moveTo(x1, y1)
   context.lineTo(x2, y2)
   context.strokeStyle = color
-  context.lineWidth = size
+  context.lineWidth = size * 2
   context.stroke()
 }
