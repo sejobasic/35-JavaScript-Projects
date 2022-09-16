@@ -20,7 +20,7 @@ canvas.addEventListener('mousedown', (e) => {
   // x and y positioning
   x = e.offsetX
   y = e.offsetY
-  
+
   drawCircle()
 })
 
@@ -31,7 +31,7 @@ canvas.addEventListener('mouseup', (e) => {
   // x and y positioning
   x = undefined
   y = undefined
-  
+
   drawCircle()
 })
 
