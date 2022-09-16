@@ -23,6 +23,8 @@ function addNewNote(text = '') {
   const note = document.createElement('div')
   note.classList.add('note')
 
+  note.style.background = random_color
+
   note.innerHTML = `
     <div class="tools">
       <button class="edit">
@@ -33,22 +35,35 @@ function addNewNote(text = '') {
       </button>
     </div>
 
-    <div class="main ${text ? '' : 'hidden'}"></div>
+    <div class="main ${text ? "" : "hidden"}"></div>
     <textarea 
-      style="background-color: ${random_color}" 
-      class="${text ? 'hidden' : ''}"></textarea>
+    style="background-color: ${random_color}"
+      class="${text ? "hidden" : ""}"></textarea>
   `
 
   const editBtn = note.querySelector('.edit')
   const deleteBtn = note.querySelector('.delete')
   const main = note.querySelector('.main')
-  const textArea = note.querySelector('.textarea')
+  const textArea = note.querySelector('textarea')
+
+  textArea.value = text
+  main.innerHTML = text
+
 
   deleteBtn.addEventListener('click', () => {
     note.remove()
   })
 
-  
+  editBtn.addEventListener('click', () => {
+    main.classList.toggle('hidden')
+    textArea.classList.toggle('hidden')
+  })
+
+  textArea.addEventListener('input', (e) => {
+    const { value } = e.target
+
+    main.innerHTML = value
+  })
 
   document.body.appendChild(note)
 }
