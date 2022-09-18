@@ -1,29 +1,15 @@
 const addBtn = document.getElementById('add')
 
+const notes = JSON.parse(localStorage.getItem('notes'))
+if (notes) {
+  notes.forEach((note) => addNewNote(note))
+}
+
 addBtn.addEventListener('click', () => addNewNote())
-
-const colorArr = [
-  '#EDCF8E',
-  '#D0ABA0',
-  '#F6E7CB',
-  '#CCC9E7',
-  '#BBE1C3',
-  '#F2F5FF',
-  '#F3E9DC',
-  '#E8D7F1',
-  '#D8D4D5',
-  '#D0D6B5',
-  '#F2F5FF',
-]
-
-// selecting random background color for note text area
-const random_color = colorArr[Math.floor(Math.random() * colorArr.length)]
 
 function addNewNote(text = '') {
   const note = document.createElement('div')
   note.classList.add('note')
-
-  note.style.background = random_color
 
   note.innerHTML = `
     <div class="tools">
@@ -35,10 +21,9 @@ function addNewNote(text = '') {
       </button>
     </div>
 
-    <div class="main ${text ? "" : "hidden"}"></div>
+    <div class="main ${text ? '' : 'hidden'}"></div>
     <textarea 
-    style="background-color: ${random_color}"
-      class="${text ? "hidden" : ""}"></textarea>
+      class="${text ? 'hidden' : ''}"></textarea>
   `
 
   const editBtn = note.querySelector('.edit')
@@ -49,9 +34,11 @@ function addNewNote(text = '') {
   textArea.value = text
   main.innerHTML = text
 
-
   deleteBtn.addEventListener('click', () => {
-    note.remove()
+    if (window.confirm('Are you sure you want to delete this note?')) {
+      note.remove()
+      updateLS()
+    }
   })
 
   editBtn.addEventListener('click', () => {
@@ -63,7 +50,19 @@ function addNewNote(text = '') {
     const { value } = e.target
 
     main.innerHTML = value
+
+    updateLS()
   })
 
   document.body.appendChild(note)
+}
+
+// Update Local Storage
+function updateLS() {
+  const notesText = document.querySelectorAll('textarea')
+  const notes = []
+
+  notesText.forEach((note) => notes.push(note.value))
+
+  localStorage.setItem('notes', JSON.stringify(notes))
 }
