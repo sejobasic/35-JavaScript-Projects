@@ -4,19 +4,26 @@ body {
     margin: 0;
     background-image: url(https://images.unsplash.com/photo-1602357280104-742c517a1d82?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3506&q=80);
     background-size: cover;
+    font-family: Helvetica;
 }
 
 .container {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: auto;
-    margin-top: 100px;
+    margin: 100px auto 0;
     max-width: 400px;
     border-radius: 20px;
     border: 1px solid white;
-    background: navy;
+    background: #445E93;
     padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin: 150px auto 0;
+  font-size: 38px;
+  color: #FFF;
 }
 
 h3 {
@@ -70,7 +77,7 @@ h3 {
     border-radius: 10px;
     text-align: center;
     margin: 10px auto;
-    background: red;
+    background: rgb(254, 43, 43);
     border: 1px solid white;
     color: white;
     cursor: pointer;
