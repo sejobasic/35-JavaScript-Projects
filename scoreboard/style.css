@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+body {
+    margin: 0;
+    background-image: url(https://images.unsplash.com/photo-1602357280104-742c517a1d82?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3506&q=80);
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 100px;
+    max-width: 400px;
+    border-radius: 20px;
+    border: 1px solid white;
+    background: navy;
+    padding: 20px;
+}
+
+h3 {
+    font-size: 28px;
+    color: white;
+    margin: 0;
+}
+
+.flex-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 200px;
+    padding: 30px;
+}
+
+.num {
+    background: black;
+    color: red;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 34px;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    border: 1px solid white;
+}
+
+.sub-item {
+    display: flex;
+    gap: 10px;
+}
+
+.sub-item div {
+    border: 1px solid white;
+    border-radius: 10px;
+    font-size: 18px;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.sub-item div:active {
+    background: white;
+    color: navy;
+}
+
+.clear {
+    width: 200px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 10px auto;
+    background: red;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+}
+
+.clear:active {
+    background: darkred;
+}
