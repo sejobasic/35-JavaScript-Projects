@@ -14,6 +14,10 @@ body {
   font-family: Helvetica;
 }
 
+li {
+  margin: 0;
+}
+
 img {
   position: relative;
   width: 70%;
@@ -38,11 +42,18 @@ img {
 
 .navbar-item {
   padding: 2em;
+  cursor: pointer;
 }
 
 .menu-toggle {
   border-right: 1px solid rgba(0, 0, 0, 0.3);
 }
+
+.menu-cart:hover {
+  background: black;
+  color: #fff;
+}
+
 
 .hamburger {
   position: relative;
@@ -70,16 +81,21 @@ img {
 .hamburger b:nth-child(3) {
   top: 60px;
 }
-
 .site-logo h1 {
   font-family: 'Playfair Display', serif;
   text-transform: uppercase;
   font-size: 3em;
+  cursor: pointer;
 }
 
 .site-logo span {
   font-style: italic;
   font-weight: 400;
+}
+
+.site-logo:hover {
+  filter: blur(5px);
+  transition: all 0.5s ease-in-out;
 }
 
 .menu-cart {
@@ -120,20 +136,27 @@ img {
   font-size: 5em;
   line-height: 0.8em;
   font-weight: 500;
+  margin-top: 0.5em;
 }
 
 .product-price {
+  font-family: 'Playfair Display', serif;
   font-size: 4em;
-  margin-top: 0.7em;
+  margin-top: 0.3em;
 }
 
 .product-color {
-  font-weight: 400;
-  padding: 1.2em 0;
+  font-size: 1.2em;
+  margin-top: 2em;
 }
 
 .product-size {
-  margin-top: 1.4em;
+  margin-top: 5em;
+}
+
+.product-about {
+  margin-top: 1em;
+  font-size: 1em;
 }
 
 label {
@@ -164,6 +187,10 @@ input:checked + span {
   color: #fff;
 }
 
+input:hover + span {
+  border-color: black;
+}
+
 .product-add-to-cart {
   display: flex;
   justify-content: center;
@@ -172,4 +199,10 @@ input:checked + span {
   width: 100%;
   border-top: 1px solid rgba(0, 0, 0, 0.3);
   text-transform: uppercase;
+}
+
+.product-add-to-cart:hover {
+  background: black;
+  color: #fff;
+  cursor: pointer;
 }
