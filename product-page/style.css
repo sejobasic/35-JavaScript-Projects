@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.004em;
+  color: black;
+}
+
+html,
+body {
+  background: #fff;
+}
+
+span {
+  font-style: italic;
+  font-weight: 400;
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.navbar-item {
+  padding: 2em;
+}
+
+.menu-toggle {
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.hamburger {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  top: -46px;
+}
+
+.hamburger b {
+  display: block;
+  position: relative;
+  height: 0.1em;
+  width: 40px;
+  background: black;
+}
+
+.hamburger b:first-child {
+  top: 48px;
+}
+
+.hamburger b:nth-child(2) {
+  top: 54px;
+  width: 48px;
+}
+
+.hamburger b:nth-child(3) {
+  top: 60px;
+}
+
+.site-logo h1 {
+  font-family: 'Playfair Display', serif;
+  text-transform: uppercase;
+  font-size: 3em;
+}
+
+.menu-cart {
+  font-family: Helvetica;
+  font-weight: 400;
+  border-left: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.product-wrapper {
+  display: flex;
+  height: 100vh;
+  background: #fff;
+}
+
+.product-image {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex: 2;
+  height: 100%;
+}
+
+img {
+  position: relative;
+}
