@@ -25,7 +25,7 @@
       </div>
       <div class="product-wrapper">
         <div class="product-image">
-          <img src="tee.png" alt="button-up tee" />
+          <img src="https://cdn.shopify.com/s/files/1/0642/8893/products/Devils_Ears_Button_Up_Shirt_White_Front_optimized_1.jpg?v=1652832733&width=832" alt="button-up tee" />
         </div>
         <div class="product-info">
           <div class="product-description">
@@ -43,5 +43,21 @@
         </div>
       </div>
     </div>
+    <script>
+      gsap.from('.navbar', 2, { y: -100, ease: Expo.easeInOut })
+      gsap.from('.product-info', 2, { x: 600, ease: Expo.easeInOut })
+      gsap.from('.product-image', 2, { y: 600, ease: Expo.easeInOut })
+      gsap.from('.product-add-to-cart', 2, { 
+        opacity: 0, 
+        ease: Expo.easeInOut,
+        delay: 1,
+      })
+      TweenMax.staggerFrom('.product-description > div', 2, {
+        opacity: 0,
+        x: 500,
+        ease: Expo.easeInOut,
+        delay: 0.3
+      }, 0.08)
+    </script>
   </body>
 </html>
