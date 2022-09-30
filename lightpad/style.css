@@ -5,8 +5,8 @@
 }
 
 body {
-  background-color: rgb(42, 42, 42);
-  color: #fff;
+  background-color: rgb(53, 50, 50);
+  color: rgb(255, 255, 255);
   font-family: 'Muli', sans-serif;
   display: flex;
   flex-direction: column;
@@ -15,4 +15,32 @@ body {
   height: 100vh;
   overflow: hidden;
   margin: 0;
+}
+
+h1 {
+  letter-spacing: 60px;
+  font-weight: 300;
+  margin-top: -500px;
+  margin-bottom: 100px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 400px;
+}
+
+.square {
+  width: 16px;
+  height: 16px;
+  background-color: #1d1d1d;
+  box-shadow: 0 0 2px #000;
+  margin: 2px;
+  transition: 2s ease;
+}
+
+.square:hover {
+  transition-duration: 0s;
 }
