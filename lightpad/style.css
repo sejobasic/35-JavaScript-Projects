@@ -18,10 +18,11 @@ body {
 }
 
 h1 {
-  letter-spacing: 60px;
+  letter-spacing: 80px;
   font-weight: 300;
-  margin-top: -500px;
+  margin-top: -200px;
   margin-bottom: 100px;
+  padding-left: 80px;
 }
 
 .container {
@@ -29,12 +30,12 @@ h1 {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 400px;
+  max-width: 700px;
 }
 
 .square {
-  width: 16px;
-  height: 16px;
+  width: 24px;
+  height: 24px;
   background-color: #1d1d1d;
   box-shadow: 0 0 2px #000;
   margin: 2px;

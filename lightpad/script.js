@@ -1,96 +1,46 @@
-// Axios API Config
+const container = document.getElementById('container')
+const colors = [
+  '#9D6381',
+  '##FDECEF',
+  '#612940',
+  '#7CEA9C',
+  '#55D6BE',
+  '#2E5EAA',
+  '#5B4E77',
+  '#593959',
+  '#FF5666',
+  '#00FDDC',
+  '#A2AD91',
+  '#DBB4AD',
+  '#8884FF',
+]
+const SQUARES = 500
 
-const APIURL = 'https://api.github.com/users/'
+// loop over squares
+// for every square add class
+// insert the square with class into container
+for (let i = 0; i < SQUARES; i++) {
+  const square = document.createElement('div')
+  square.classList.add('square')
 
-const main = document.getElementById('main')
-const form = document.getElementById('form')
-const search = document.getElementById('search')
-
-async function getUser(username) {
-  try {
-    const { data } = await axios(APIURL + username)
-
-    createUserCard(data)
-    getRepos(username)
-  } catch (err) {
-    // If user does not exist render error card
-    if (err.response.status == 404) {
-      createErrorCard('User not found')
-    }
-  }
-}
-
-// Get users repos
-async function getRepos(username) {
-  try {
-    const { data } = await axios(APIURL + username + '/repos?sort=created')
-
-    addReposToCard(data)
-  } catch (err) {
-    createErrorCard('Problem fetching user repos')
-  }
-}
-
-function createUserCard(user) {
-  const cardHtml = `
-    <div class="card">
-      <div>
-        <img
-          src="${user.avatar_url}"
-          alt="user profile picture"
-          class="avatar"
-        />
-      </div>
-      <div class="user-info">
-        <h2>${user.name}</h2>
-        <p>${user.bio}</p>
-
-        <ul>
-          <li>${user.followers} <strong>Followers</strong></li>
-          <li>${user.following} <strong>Following</strong></li>
-          <li>${user.public_repos} <strong>Repos</strong></li>
-        </ul>
-
-        <div id="repos"></div>
-      </div>
-    </div>
-  `
-  main.innerHTML = cardHtml
-}
-
-function createErrorCard(msg) {
-  const errorCard = `
-    <div class='card'>
-      <h1>${msg}</h1>
-    </div>
-  `
-  main.innerHTML = errorCard
-}
-
-function addReposToCard(repos) {
-  const reposElement = document.getElementById('repos')
-
-  repos.slice(0, 10).forEach((repo) => {
-    const repoLink = document.createElement('a')
-    repoLink.classList.add('repo')
-    repoLink.href = repo.html_url
-    repoLink.target = '_blank'
-    repoLink.innerText = repo.name
-
-    reposElement.appendChild(repoLink)
+  // Set color on square on mouse hover
+  square.addEventListener('mouseover', () => {
+    setColor(square)
   })
+  // Remove color on square on mouse leave
+  square.addEventListener('mouseout', () => {
+    removeColor(square)
+  })
+
+  container.appendChild(square)
 }
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault()
+const setColor = (element) => {
+  const color = getRandomColor()
+}
+const removeColor = (element) => {
 
-  const user = search.value
-
-  if (user) {
-    // Get user
-    getUser(user)
-
-    // Clear search value
-    search.value = ''
-  }
-})
+}
+const getRandomColor = () => {
+  return colors[Math.floor(Math.random() * colors.length)]
+}
