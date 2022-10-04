@@ -1,18 +1,15 @@
 const container = document.getElementById('container')
 const colors = [
-  '#9D6381',
-  '##FDECEF',
-  '#612940',
-  '#7CEA9C',
-  '#55D6BE',
-  '#2E5EAA',
-  '#5B4E77',
+  '#d7bce8',
+  '##dbc3ea',
+  '#dfc9ed',
+  '#e3d0ef',
+  '#e7d7f1',
+  '#ebdef4',
+  '#efe4f6',
   '#593959',
-  '#FF5666',
-  '#00FDDC',
   '#A2AD91',
   '#DBB4AD',
-  '#8884FF',
 ]
 const SQUARES = 500
 
@@ -37,9 +34,13 @@ for (let i = 0; i < SQUARES; i++) {
 
 const setColor = (element) => {
   const color = getRandomColor()
+  // Set the css properties on the square element
+  element.style.background = color
+  element.style.boxShadow = `0 0 2px ${color}, 0 0 10px ${color}`
 }
 const removeColor = (element) => {
-
+  element.style.background = '#1d1d1d'
+  element.style.boxShadow = `0 0 2px #000`
 }
 const getRandomColor = () => {
   return colors[Math.floor(Math.random() * colors.length)]
