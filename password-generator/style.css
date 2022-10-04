@@ -73,9 +73,14 @@ p {
 }
 
 .clipboard {
-  width: 60px;
+  width: 65px;
   margin-left: 20px;
+  transition: 1s ease;
   cursor: pointer;
+}
+
+.clipboard:hover {
+  transform: scale(1.1);
 }
 
 .text-color {
