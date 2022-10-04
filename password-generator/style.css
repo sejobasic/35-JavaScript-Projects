@@ -62,11 +62,13 @@ p {
 }
 
 .password {
+  width: 100%;
   background: #abd1c6;
   color: #001e1d;
-  padding: 10px 30px;
+  padding: 10px 40px;
   border-radius: 10px;
   opacity: 0.8;
+  font-size: 18px;
 }
 
 .text-color {
