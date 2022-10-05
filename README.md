@@ -1,1 +1,3 @@
-## A Collection of short Projects done in HTML/CSS/JavaScript over the span of thirty days.
+## A Collection of short Projects done in Raw HTML/CSS/JavaScript.
+
+### Password Generator
