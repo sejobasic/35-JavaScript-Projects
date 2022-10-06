@@ -4,6 +4,7 @@ const inputEl = document.querySelector('.input-el')
 const inputBtn = document.querySelector('.input-btn')
 const ulEl = document.querySelector('.ul-el')
 const deleteBtn = document.querySelector('.delete-btn')
+const removeBtn = document.querySelector('.remove-item')
 const tabBtn = document.querySelector('.tab-btn')
 
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem('myLeads'))
@@ -29,6 +30,7 @@ function render(leads) {
                 <a target='_blank' href='${leads[i]}'>
                     ${leads[i]}
                 </a>
+                <button class='remove-item'>Remove</button>
             </li>
         `
   }
