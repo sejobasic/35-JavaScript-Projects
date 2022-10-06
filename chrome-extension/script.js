@@ -30,7 +30,6 @@ function render(leads) {
                 <a target='_blank' href='${leads[i]}'>
                     ${leads[i]}
                 </a>
-                <button class='remove-item'>Remove</button>
             </li>
         `
   }
