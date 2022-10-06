@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "version": "1.0",
+  "name": "TABS",
+  "description": "Save your favorite tabs.",
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "TABS.png"
+  },
+  "icons": {
+    "16": "TABS.png",
+    "48": "TABS.png"
+  },
+  "permissions": ["tabs"]
+}
