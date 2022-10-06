@@ -36,7 +36,7 @@ function render(leads) {
   ulEl.innerHTML = listItems
 }
 
-deleteBtn.addEventListener('click', function () {
+deleteBtn.addEventListener('click', () => {
   if (window.confirm('Are you sure you want to delete all tabs?')) {
     localStorage.clear()
     myLeads = []
@@ -44,7 +44,7 @@ deleteBtn.addEventListener('click', function () {
   }
 })
 
-inputBtn.addEventListener('click', function () {
+inputBtn.addEventListener('click', () => {
   myLeads.push(inputEl.value)
   inputEl.value = ''
   localStorage.setItem('myLeads', JSON.stringify(myLeads))
