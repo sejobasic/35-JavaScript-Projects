@@ -16,7 +16,6 @@ btnEl.addEventListener('click', () => {
   convertMetric()
 })
 
-
 function convertMetric() {
   console.log(inputEl.value)
 
@@ -36,12 +35,7 @@ function convertMetric() {
   kilo = kilo.toFixed(3)
   pound = pound.toFixed(3)
 
-  
-
   lengthEl.textContent = `${inputEl.value} meters = ${meter} feet | ${inputEl.value} feet = ${feet} meters`
   volumeEl.textContent = `${inputEl.value} liters = ${liter} gallons | ${inputEl.value} gallons = ${gallon} liters`
   massEl.textContent = `${inputEl.value} kilos = ${kilo} pounds | ${inputEl.value} pounds = ${pound} kilos`
 }
-
-
-
