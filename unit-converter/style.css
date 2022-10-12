@@ -37,6 +37,12 @@ p {
   font-weight: 400;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .container {
   display: flex;
   align-items: center;
@@ -55,6 +61,7 @@ p {
   background: transparent;
   border: 2px solid #B295FF;
   border-radius: 5px;
+  text-align: center;
   font-size: 58px;
   font-weight: 600;
   color: #fff;
