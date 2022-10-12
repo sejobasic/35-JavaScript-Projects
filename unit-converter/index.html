@@ -11,22 +11,26 @@
   <body>
     <div class="container">
       <h1>Metric/Imperial Unit Conversion</h1>
-      <input type="number" class="num-input" />
+      <input
+        type="number"
+        class="num-input"
+        onKeyPress="if(this.value.length==4) return false;"
+      />
       <button class="btn">Convert</button>
     </div>
 
     <div class="card-container">
       <div class="card">
         <h3 class="card-title">Length (Meter/Feet)</h3>
-        <p class="converted"></p>
+        <p class="length-card"></p>
       </div>
       <div class="card">
         <h3 class="card-title">Volume (Liters/Gallons)</h3>
-        <p class="converted">20 meters = 65.616 feet | 20 feet = 6.096 meters</p>
+        <p class="volume-card"></p>
       </div>
       <div class="card">
         <h3 class="card-title">Mass (Kilograms/Pounds)</h3>
-        <p class="converted">20 meters = 65.616 feet | 20 feet = 6.096 meters</p>
+        <p class="mass-card"></p>
       </div>
     </div>
 
