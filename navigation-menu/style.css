@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;900&display=swap');
 
 :root {
-  --primary-color: #f45d48;
-  --secondary-color: #078080;
-  --bg-color: #feefe8;
+  --primary-color: #d9376e;
+  --secondary-color: #2a2a2a;
+  --bg-color: #eff0f3;
 }
 
 * {
@@ -17,10 +17,16 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  color: rgb(41, 41, 41);
+  color: var(--secondary-color);
   background: var(--bg-color);
   font-family: 'Archivo';
 }
+
+.logo {
+  color: var(--primary-color);
+  margin: 0 3px;
+}
+
 
 .text {
   text-transform: uppercase;
@@ -34,9 +40,17 @@ body {
 }
 
 .open-btn {
+  opacity: 0.5;
   position: fixed;
   top: 10px;
   left: 10px;
+}
+
+.close-btn {
+  opacity: 0.5;
+  position: absolute;
+  top: 40px;
+  right: 30px;
 }
 
 .nav {
@@ -86,13 +100,6 @@ body {
   transition-delay: .4s;
 }
 
-.close-btn {
-  opacity: 0.5;
-  position: absolute;
-  top: 40px;
-  right: 30px;
-}
-
 .list {
   list-style-type: none;
   padding: 0;
@@ -103,7 +110,7 @@ body {
 }
 
 .list li a {
-  color: rgb(41, 41, 41);
+  color: var(--secondary-color);
   text-decoration: none;
   font-size: 16px;
   text-transform: uppercase;
