@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;900&display=swap');
+
+:root {
+  --primary-color: #d9376e;
+  --secondary-color: #2a2a2a;
+  --bg-color: #eff0f3;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+
+body {
+  height: 100%;
+  color: var(--secondary-color);
+  background: var(--bg-color);
+  font-family: 'Archivo';
+}
+
+
+
