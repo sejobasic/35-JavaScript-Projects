@@ -18,11 +18,32 @@ body {
   color: var(--secondary-color);
   background: var(--bg-color);
   font-family: 'Inter', sans-serif;
+  overflow: hidden;
 }
 
 h1 {
   margin: 0;
   font-size: 5rem;
+}
+
+h2 {
+  
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+}
+
+a {
+  text-decoration: none;
 }
 
 .header {
@@ -44,6 +65,45 @@ h1 {
   margin: 0 auto;
 }
 
+.nav-container a {
+  color: var(--secondary-color);
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  margin-top: 10px;
+  background: #90b4ce;
+}
+
+.nav-container a,
+.nav-container button,
+.nav-container span {
+  cursor: pointer;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--tertiary-color);
+  transform-origin: center;
+  transform: translate(-50%, 0) scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-item:hover::before {
+  transform: translate(-50%, 0) scaleX(1);
+}
+
+
 .logo {
   font-family: 'Libre Baskerville', serif;
   font-size: 2rem;
@@ -52,13 +112,13 @@ h1 {
 }
 
 .contact-btn {
-  border: none;
-  border-radius: 5px;
-  font-size: 1.2rem;
-  padding: 10px 20px;
   color: #fffffe;
   background: var(--tertiary-color);
   margin-left: auto;
+}
+
+.contact-btn:hover {
+  opacity: 0.8;
 }
 
 .main-content {
@@ -70,19 +130,84 @@ h1 {
 .started-btn {
   border: 2px solid var(--secondary-color);
   color: var(--secondary-color);
-  border-radius: 5px;
-  font-size: 1.2rem;
-  padding: 10px 20px;
   background: transparent;
   margin-top: 40px;
   margin-right: auto;
   font-size: 1.2rem;
+  cursor: pointer;
 }
 
+.started-btn:hover {
+  background: var(--secondary-color);
+  color: #fffffe;
+}
 
 .hero {
   margin-left: auto;
   width: 50%;
 }
 
+.main-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 600px;
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.grid-item h2 {
+  padding: 10px 0 20px;
+}
+
+.icon {
+  font-size: 2rem;
+  color: #90b4ce;
+}
+
+.footer {
+  width: 100%;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  background: var(--secondary-color);
+}
+
+.footer-container {
+  width: 1200px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  color: #fffffe;
+  gap: 40px;
+}
+
+.footer-item-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.footer-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-container .logo {
+  margin-right: auto;
+}
+
+.footer-container a {
+  color: #fffffe;
+}
+
+.footer-container .logo {
+  color: #fffffe;
+}
 
