@@ -9,3 +9,36 @@ body {
   display: flex;
   align-items: center;
 }
+
+button {
+  background: #E4E3D3;
+  border: none;
+  font-size: 36px;
+  text-transform: uppercase;
+  padding: 20px 30px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.accept-btn:hover {
+  background: #6D9F71;
+  color: #E4E3D3;
+}
+
+/* .decline-btn:hover {
+  background: #AF3E4D;
+  color: #E4E3D3;
+} */
+
+.container {
+  width: 800px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
