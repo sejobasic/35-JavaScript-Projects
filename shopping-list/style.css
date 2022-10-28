@@ -32,15 +32,16 @@ h1 {
   margin: 50px auto;
 }
 
-.list {
+.list-items-container {
   display: flex;
   align-items: center;
   gap: 5px;
+  margin: 0;
 }
 
 .list-item,
 input[type='text'] {
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .list-item {
@@ -49,6 +50,11 @@ input[type='text'] {
   background: var(--secondary-color);
   color: var(--bg-color);
   font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.list-items-container button {
   margin-bottom: 10px;
 }
 
@@ -60,7 +66,7 @@ ul {
 input[type='text'] {
   width: 100%;
   padding: 10px 15px;
-  font-size: 18px;
+  font-size: 24px;
   border: 2px solid var(--secondary-color);
   background: var(--bg-color);
   color: var(--secondary-color);
@@ -70,6 +76,10 @@ input:focus {
   outline-color: var(--primary-color);
   outline-width: 1px;
   outline-style: solid;
+}
+
+input::placeholder {
+  color: rgb(191, 191, 191);
 }
 
 label {

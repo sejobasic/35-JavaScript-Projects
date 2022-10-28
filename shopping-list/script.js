@@ -17,8 +17,10 @@ addItemBtn.addEventListener('click', function () {
 function render() {
   let html = ''
   for (let item of shoppingList) {
-    html += `<li class="list-item">${item}</li>
-    <button class-'remove-btn'>X</button>`
+    html += `<div class='list-items-container'>
+    <li class="list-item">${item}</li>
+    <button class-'remove-btn'>X</button>
+    </div>`
   }
   list.innerHTML = html
 }
