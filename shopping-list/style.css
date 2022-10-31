@@ -34,7 +34,7 @@ h1 {
   margin: 50px auto;
 }
 
-.list-items-container {
+.list-item-container {
   display: flex;
   align-items: center;
   gap: 5px;
@@ -57,7 +57,7 @@ input[type='text'] {
   overflow-wrap: break-word;
 }
 
-.list-items-container button {
+.list-item-container button {
   margin-bottom: 10px;
 }
 
