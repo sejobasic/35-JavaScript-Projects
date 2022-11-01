@@ -1,7 +1,7 @@
 export const tweetsData = [   
   {
       handle: `@TrollBot66756542 💎`,
-      profilePic: `https://i.pravatar.cc/300`,
+      profilePic: `https://i.pravatar.cc/400?img=65`,
       likes: 27,
       retweets: 10,
       tweetText: `Buy Bitcoin, ETH Make 💰💰💰 low low prices. 
@@ -13,19 +13,19 @@ export const tweetsData = [
   },    
   {
       handle: `@FakeElon ✅`,
-      profilePic: `https://i.pravatar.cc/300`,
+      profilePic: `https://i.pravatar.cc/400?img=68`,
       likes: 6500,
       retweets: 234,
       tweetText: `I need volunteers for a one-way mission to Mars 🪐. No experience necessary🚀`,
       replies: [
                 {
-              handle: `@TomCruise ✅`,
-              profilePic: `https://i.pravatar.cc/300`,
+              handle: `@Lora ✅`,
+              profilePic: `https://i.pravatar.cc/400?img=36`,
               tweetText: `Yes! Sign me up! 😎🛩`,
           },
                 {
-              handle: `@ChuckNorris ✅`,
-              profilePic: `https://i.pravatar.cc/300`,
+              handle: `@CindyNorris ✅`,
+              profilePic: `https://i.pravatar.cc/400?img=35`,
               tweetText: `I went last year😴`,
           },
       ],
@@ -35,19 +35,19 @@ export const tweetsData = [
   },
       {
       handle: `@NoobCoder12`,
-      profilePic: `https://i.pravatar.cc/300`,
+      profilePic: `https://i.pravatar.cc/400?img=11`,
       likes: 10,
       retweets: 3,
       tweetText: `Are you a coder if you only know HTML?`,
       replies: [
           {
               handle: `@StackOverflower ☣️`,
-              profilePic: `https://i.pravatar.cc/300`,
+              profilePic: `https://i.pravatar.cc/400?img=7`,
               tweetText: `No. Obviosuly not. Go get a job in McDonald's.`,
           },
           {
               handle: `@YummyCoder64`,
-              profilePic: `https://i.pravatar.cc/300`,
+              profilePic: `https://i.pravatar.cc/400?img=6`,
               tweetText: `You are wonderful just as you are! ❤️`,
           },
       ],
