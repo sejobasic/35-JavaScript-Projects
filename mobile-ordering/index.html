@@ -17,59 +17,25 @@
     </div>
 
     <div class="content-container">
-      <section class="main-section">
-        <div class="food-item-container">
-          <img src="./images/burger.png" alt="cheeseburger icon" />
-          <div class="food-details">
-            <h3>Cheeseburger</h3>
-            <p class="item-info">
-              cheddar cheese, grilled onions, secret sauce
-            </p>
-            <p class="price">$12</p>
-          </div>
-          <button>+</button>
-        </div>
-      </section>
-      <section class="main-section">
-        <div class="food-item-container">
-          <img src="./images/shake.png" alt="cheeseburger icon" />
-          <div class="food-details">
-            <h3>Milkshake</h3>
-            <p class="item-info">chocolate cookie crumble</p>
-            <p class="price">$12</p>
-          </div>
-          <button>+</button>
-        </div>
-      </section>
-      <section class="main-section">
-        <div class="food-item-container">
-          <img src="./images/french-fries.png" alt="cheeseburger icon" />
-          <div class="food-details">
-            <h3>French Fries</h3>
-            <p class="item-info">fresh fries with sea salt</p>
-            <p class="price">$12</p>
-          </div>
-          <button>+</button>
-        </div>
-      </section>
 
       <section class="checkout-section">
         <h4>Your order</h4>
         <div class="checkout-container">
-          <h3 class="checkout-item">Cheeseburger</h3>
-          <p class="price">$12</p>
+          <div class="checkout-item">
+            <h3>
+              Cheeseburger<button class="remove-item">remove</button>
+            </h3>
+            <p class="total-price">$12</p>
+          </div>
         </div>
+        <div class="line"></div>
         <div class="checkout-container">
-          <h3 class="checkout-item">Milkshake</h3>
-          <p class="price">$12</p>
+          <h3>Total price:</h3>
+          <p class="total-price">$24</p>
         </div>
-          <div class="line"></div>
-          <div class="checkout-container">
-          <h3 class="total-price">Total price:</h3>
-          <p class="price">$24</p>
-        </div>
-          <button class="order-btn">Complete order</button>
+        <button class="order-btn">Complete order</button>
       </section>
+
     </div>
     <script src="script.js" type="module"></script>
   </body>
