@@ -81,6 +81,13 @@ button:hover {
   opacity: 0.7;
 }
 
+
+/* .delete-btn {
+  background: transparent;
+  color: black;
+  font-size: 15px;
+} */
+
 /* tweet */
 
 .tweet {
@@ -88,12 +95,14 @@ button:hover {
   padding: 20px 0 0 0;
   width: 100%;
   margin: 15px 0;
+  
 }
 
 .tweet-inner {
   display: flex;
   align-items: flex-start;
   gap: 10px;
+  position: relative;
 }
 
 .tweet-details {
@@ -127,7 +136,18 @@ button:hover {
   font-size: 14px;
   line-height: 20px;
 }
+.deleteBtn {
+  position: absolute;
+  top: -20%;
+  right: -5%;
+}
 
+.deleteBtn button{
+  background-color: transparent;
+  color: rgb(114, 114, 114);
+  font-size: 15px;
+  font-weight: 400;
+}
 /* images */
 
 .profile-pic {

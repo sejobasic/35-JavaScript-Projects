@@ -1,6 +1,11 @@
-import { tweetsData } from './data.js'
-import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
+import { tweetsData as tweets } from './data.js'
+import { v4 as uuidv4 } from 'https://jspm.dev/uuid'
 
+let tweetsData = [...tweets]
+
+if (localStorage.getItem('tweets')) {
+  tweetsData = JSON.parse(localStorage.getItem('tweets'))
+}
 
 // Listen for click on dataset icons
 // Pass id into handler functions
@@ -13,6 +18,8 @@ document.addEventListener('click', function (e) {
     handleReplyClick(e.target.dataset.reply)
   } else if (e.target.id === 'tweet-btn') {
     handleTweetBtnClick()
+  } else if (e.target.dataset.del) {
+    handleDeleteTweet(e.target.dataset.del)
   }
 })
 
@@ -65,11 +72,23 @@ function handleTweetBtnClick() {
       isRetweeted: false,
       uuid: uuidv4(),
     })
+    saveToStorage()
     render()
     tweetInput.value = ''
   } else {
     tweetInput.classList.toggle('is-empty')
   }
+}
+
+function handleDeleteTweet(tweetId) {
+  const targetTweet = tweetsData.map((tweet) => tweet.uuid).indexOf(tweetId)
+  tweetsData.splice(targetTweet, 1)
+  saveToStorage()
+  render()
+}
+
+function saveToStorage() {
+  localStorage.setItem('tweets', JSON.stringify(tweetsData))
 }
 
 function getFeedHtml() {
@@ -108,14 +127,17 @@ function getFeedHtml() {
 
     feedHtml += `
     <div class="tweet">
-        <div class="tweet-inner">
-            <img src="${tweet.profilePic}" class="profile-pic">
-            <div>
-                <p class="handle">${tweet.handle}</p>
-                <p class="tweet-text">${tweet.tweetText}</p>
-                <div class="tweet-details">
-                    <span class="tweet-detail">
-                        <i class="fa-regular fa-comment-dots"
+    <div class="tweet-inner">
+    <div class="deleteBtn">
+     <button class='delete-btn' id="del-btn${tweet.uuid}" data-del="${tweet.uuid}">X</button>
+    </div>
+        <img src="${tweet.profilePic}" class="profile-pic">
+        <div>
+        <p class="handle">${tweet.handle}</p>
+        <p class="tweet-text">${tweet.tweetText}</p>
+        <div class="tweet-details">
+        <span class="tweet-detail">
+        <i class="fa-regular fa-comment-dots"
                         data-reply="${tweet.uuid}"
                         ></i>
                         ${tweet.replies.length}
