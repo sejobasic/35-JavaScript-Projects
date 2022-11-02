@@ -1,5 +1,11 @@
 # A Collection of short Projects done in Raw HTML/CSS/JavaScript.
 
+## Twitter Clone
+[LINK TO APP](https://tweeta-clone-project.netlify.app/)
+### Like Retweet and toggle comment UI interactivity  
+<img  alt="Screen Shot 1" src="./img/tweeta.png">
+<hr />
+
 ## Password Generator
 ### Generate a random 15 character password and copy to clipboard.
 <img  alt="Screen Shot 1" src="./img/password.png">
@@ -58,10 +64,4 @@
 ## Meme Picker
 ### Pick F1 Memes based off your mood
 <img  alt="Screen Shot 1" src="./img/meme.png">
-<hr />
-
-## Twitter Clone
-[LINK TO APP](https://tweeta-clone-project.netlify.app/)
-### Like Retweet and toggle comment UI interactivity  
-<img  alt="Screen Shot 1" src="./img/tweeta.png">
 <hr />
