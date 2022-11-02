@@ -1,10 +1,6 @@
 import { tweetsData } from './data.js'
-const tweetInput = document.getElementById('tweet-input')
-const tweetBtn = document.getElementById('tweet-btn')
+import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
 
-tweetBtn.addEventListener('click', function () {
-  console.log(tweetInput.value)
-})
 
 // Listen for click on dataset icons
 // Pass id into handler functions
@@ -15,6 +11,8 @@ document.addEventListener('click', function (e) {
     handleRetweetClick(e.target.dataset.retweet)
   } else if (e.target.dataset.reply) {
     handleReplyClick(e.target.dataset.reply)
+  } else if (e.target.id === 'tweet-btn') {
+    handleTweetBtnClick()
   }
 })
 
@@ -48,6 +46,30 @@ function handleRetweetClick(tweetId) {
 
 function handleReplyClick(replyId) {
   document.getElementById(`replies-${replyId}`).classList.toggle('hidden')
+}
+
+// Add new tweets - insert new tweet obj in tweets data
+// Use uuidjs to generate unique identifier
+function handleTweetBtnClick() {
+  const tweetInput = document.getElementById('tweet-input')
+
+  if (tweetInput.value) {
+    tweetsData.unshift({
+      handle: `@noobdev`,
+      profilePic: `https://i.pravatar.cc/400?img=57`,
+      likes: 0,
+      retweets: 0,
+      tweetText: tweetInput.value,
+      replies: [],
+      isLiked: false,
+      isRetweeted: false,
+      uuid: uuidv4(),
+    })
+    render()
+    tweetInput.value = ''
+  } else {
+    tweetInput.classList.toggle('is-empty')
+  }
 }
 
 function getFeedHtml() {

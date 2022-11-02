@@ -43,7 +43,7 @@ export const tweetsData = [
           {
               handle: `@StackOverflower ☣️`,
               profilePic: `https://i.pravatar.cc/400?img=7`,
-              tweetText: `No. Obviosuly not. Go get a job in McDonald's.`,
+              tweetText: `No. Obviosuly not.`,
           },
           {
               handle: `@YummyCoder64`,
