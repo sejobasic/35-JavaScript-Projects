@@ -1,10 +1,12 @@
 import { menuArray } from './data.js'
 
+const contentContainer = document.querySelector('.content-container')
 const menuSection = document.querySelector('.menu-section')
 const checkoutContainer = document.querySelector('.checkout-container')
 const totalPrice = document.querySelector('.total-price')
 const modal = document.querySelector('.modal-container')
 const orderBtn = document.querySelector('.complete')
+const form = document.querySelector('.modal-form')
 
 const orders = []
 
@@ -12,16 +14,18 @@ const orders = []
 document.addEventListener('click', (e) => {
   if (e.target.dataset.add) {
     addItem(e.target.dataset.add)
-  }
-  else if (e.target.dataset.remove) {
+  } else if (e.target.dataset.remove) {
     removeItem(e.target.dataset.remove)
-  }
-  else if (e.target.dataset.complete) {
+  } else if (e.target.dataset.complete) {
     completeOrder()
-  }
-  else if (e.target.dataset.close) {
+  } else if (e.target.dataset.close) {
     closeModal()
   }
+})
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault()
+  handleSubmit()
 })
 
 // Iterate through data and render main food items inside menu section
@@ -53,6 +57,7 @@ function addItem(itemId) {
   orders.push(orderedItemObj)
 
   orderBtn.removeAttribute('disabled')
+  orderBtn.style.cursor = 'pointer'
 
   renderCheckout()
 }
@@ -89,6 +94,7 @@ function renderCheckout() {
   })
   if (orders.length < 1) {
     orderBtn.setAttribute('disabled', true)
+    orderBtn.style.cursor = 'default'
   }
   checkoutContainer.innerHTML = ordersHtml
   calculateTotal()
@@ -96,16 +102,40 @@ function renderCheckout() {
 
 function completeOrder() {
   // Only show modal if order is not empty
-
   if (orders.length > 0) {
     modal.style.display = 'block'
+    orderBtn.setAttribute('disabled', true)
+    orderBtn.style.cursor = 'default'
+    contentContainer.classList.add('blurred')
   }
+}
+
+function handleSubmit() {
+  modal.style.display = 'none'
+  contentContainer.classList.remove('blurred')
+  document.querySelector('.checkout-section').style.display = 'none'
+  document.querySelector('.confirmation-modal').style.display = 'block'
+}
+
+// Render ordered items list
+function orderedItems() {
+  let ordersHtml = ``
+  orders.forEach((order) => {
+    ordersHtml += `
+    <div class="checkout-item">
+      <h3>
+        ${order.name}<button class="remove-item" data-remove='${order.id}'>remove</button>
+      </h3>
+      <p class="item-price">$${order.price}</p>
+    </div>`
+  })
 }
 
 function closeModal() {
   modal.style.display = 'none'
+  orderBtn.removeAttribute('disabled')
+  orderBtn.style.cursor = 'pointer'
+  contentContainer.classList.remove('blurred')
 }
-
-
 
 renderFoodItems()

@@ -10,14 +10,14 @@ export const menuArray = [
     id: '1',
     name: 'Milkshake',
     ingredients: ['chocolate', 'cookie crumble'],
-    price: 12,
+    price: 7,
     image: './images/shake.png',
   },
   {
     id: '2',
     name: 'French Fries',
     ingredients: ['golden potatoes', 'sea salt'],
-    price: 12,
+    price: 7,
     image: './images/french-fries.png',
   },
 ]

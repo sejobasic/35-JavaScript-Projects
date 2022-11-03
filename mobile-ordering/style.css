@@ -108,6 +108,10 @@ h3 {
   color: var(--primary-color);
 }
 
+.checkout-section {
+  display: block;
+}
+
 .checkout-section h4 {
   text-align: center;
   text-transform: uppercase;
@@ -153,6 +157,10 @@ h3 {
   margin-top: 20px;
 }
 
+.complete {
+  cursor: default;
+}
+
 .order-btn:disabled {
   background: var(--accent-color);
 }
@@ -165,18 +173,22 @@ h3 {
   margin-top: 20px;
 }
 
+.blurred {
+  filter: blur(1px);
+}
+
 .modal-container {
   position: absolute;
   display: none;
   width: 420px;
-  border-radius: 5px;
-  top: 255px;
+  border-radius: 10px;
+  top: 185px;
   left: 0;
   right: 0;
   margin: 0 auto;
   background: var(--bg-color);
   text-align: center;
-  padding: 30px 0;
+  padding: 70px 0;
   z-index: 999;
   filter: drop-shadow(5.18654px 5.18654px 255.437px rgba(0, 0, 0, 0.7));
 }
@@ -215,4 +227,25 @@ h3 {
 .modal-form input:active,
 .modal-form input:focus {
   outline-color: var(--secondary-color);
+}
+
+.confirmation-modal {
+  display: none;
+  background: var(--secondary-color);
+  color: var(--bg-color);
+  border-radius: 10px;
+  text-align: center;
+  font-size: 24px;
+  padding: 40px 0;
+  animation-name: scale;
+  animation-duration: 0.7s;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

@@ -20,8 +20,14 @@
       <button class="close-modal-btn" data-close="close">X</button>
       <h3>Enter card details</h3>
       <form class="modal-form">
-        <input type="text" placeholder="Enter full name" required />
         <input
+          class="name-input"
+          type="text"
+          placeholder="Enter full name"
+          required
+        />
+        <input
+          class="card-input"
           type="tel"
           inputmode="numeric"
           pattern="[0-9\s]{13,19}"
@@ -30,14 +36,14 @@
           required
         />
         <input
+          class="cvv-input"
           type="tel"
           inputmode="numeric"
-          pattern="[0-9]"
           maxlength="3"
           placeholder="Enter CVV"
           required
         />
-        <button class="order-btn" disabled>Pay</button>
+        <button class="order-btn pay" data-pay="pay">Pay</button>
       </form>
     </div>
 
@@ -52,8 +58,14 @@
           <h3>Total price:</h3>
           <p class="total-price"></p>
         </div>
-        <button class="order-btn complete" data-complete="complete" disabled>Complete order</button>
+        <button class="order-btn complete" data-complete="complete" disabled>
+          Complete order
+        </button>
       </section>
+
+      <div class="confirmation-modal">
+        <p>Your order is on its way!</p>
+      </div>
     </div>
     <script src="script.js" type="module"></script>
   </body>
