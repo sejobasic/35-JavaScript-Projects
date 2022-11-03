@@ -119,6 +119,12 @@ h3 {
   padding-bottom: 5px;
 }
 
+.total-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .remove-item {
   border: none;
   background: transparent;

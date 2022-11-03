@@ -4,6 +4,7 @@ const menuSection = document.querySelector('.menu-section')
 const checkoutContainer = document.querySelector('.checkout-container')
 const totalPrice = document.querySelector('.total-price')
 
+const orders = []
 // Listen for add and complete order buttons
 document.addEventListener('click', (e) => {
   if (e.target.dataset.add) {
@@ -32,16 +33,15 @@ function renderFoodItems() {
   menuSection.innerHTML = menuHtml
 }
 
-let orders = []
 
 // Add item to order
 function addItem(itemId) {
+  let ordersHtml = ``
   const orderedItemObj = menuArray.filter((item) => {
     return item.id === itemId
   })[0]
   orders.push(orderedItemObj)
 
-  let ordersHtml = ``
 
   orders.forEach((order) => {
     ordersHtml += `
@@ -52,8 +52,16 @@ function addItem(itemId) {
       <p class="item-price">$${order.price}</p>
     </div>`
   })
-  console.log(ordersHtml)
   checkoutContainer.innerHTML = ordersHtml
+  calculateTotal()
+}
+
+function calculateTotal() {
+  let sum = 0
+  orders.forEach((order) => {
+    return sum += order.price
+  })
+  totalPrice.textContent = `$${sum}`
 }
 
 renderFoodItems()
