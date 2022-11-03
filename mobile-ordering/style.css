@@ -21,6 +21,8 @@ body {
 }
 
 header {
+  width: 475px;
+  margin: 0 auto;
   background-image: url(./images/hero.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -31,6 +33,7 @@ header {
   margin-bottom: 80px;
 }
 
+/* Global Styles */
 h1,
 h3 {
   margin: 0;
@@ -44,14 +47,19 @@ h3 {
   font-weight: 600;
 }
 
-.main-container {
-  width: 475px;
-  margin: 0 auto;
+ul,
+li {
+  padding: 0;
 }
 
 .content-container {
   width: 420px;
   margin: 0 auto;
+}
+
+/* Main Content */
+.menu-section {
+  display: block;
 }
 
 .food-item-container {
@@ -107,6 +115,8 @@ h3 {
   padding-top: 5px;
   color: var(--primary-color);
 }
+
+/* Checkout Section */
 
 .checkout-section {
   display: block;
@@ -165,7 +175,23 @@ h3 {
   background: var(--accent-color);
 }
 
-/* utility */
+/* Completed Order Section */
+.ordered-list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 15px 0;
+  border-top: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
+}
+
+.ordered-list ul li {
+  list-style: none;
+  padding: 0;
+  font-size: 26px;
+}
+
+/* Utility */
 .line {
   width: 100%;
   background-color: var(--primary-color);
@@ -236,9 +262,15 @@ h3 {
   border-radius: 10px;
   text-align: center;
   font-size: 24px;
-  padding: 40px 0;
+  font-weight: 600;
+  padding: 20px 0;
+  margin-top: 30px;
   animation-name: scale;
   animation-duration: 0.7s;
+}
+
+.confirmation-modal img {
+  width: 60px;
 }
 
 @keyframes scale {

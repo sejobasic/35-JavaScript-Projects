@@ -23,9 +23,11 @@ document.addEventListener('click', (e) => {
   }
 })
 
+// Form event
 form.addEventListener('submit', (e) => {
   e.preventDefault()
   handleSubmit()
+  orderedItems()
 })
 
 // Iterate through data and render main food items inside menu section
@@ -43,7 +45,7 @@ function renderFoodItems() {
             </p>
             <p class="item-price">$${item.price}</p>
           </div>
-          <button class='add-item-btn' data-add=${item.id}>+</button>
+          <button class='add-item-btn' data-add='${item.id}'>+</button>
         </div>`
   })
   menuSection.innerHTML = menuHtml
@@ -71,16 +73,6 @@ function calculateTotal() {
   totalPrice.textContent = `$${sum}`
 }
 
-// Remove single item from order based on target id
-function removeItem(itemId) {
-  const targetOrder = orders.forEach((order) => {
-    return order.id.indexOf(itemId)
-  })
-  orders.splice(targetOrder, 1)
-
-  renderCheckout()
-}
-
 function renderCheckout() {
   let ordersHtml = ``
   orders.forEach((order) => {
@@ -100,6 +92,14 @@ function renderCheckout() {
   calculateTotal()
 }
 
+// Remove single item from order based on target id
+function removeItem(itemId) {
+  const targetOrder = orders.map((order) => order.id).indexOf(itemId)
+  orders.splice(targetOrder, 1)
+
+  renderCheckout()
+}
+
 function completeOrder() {
   // Only show modal if order is not empty
   if (orders.length > 0) {
@@ -110,6 +110,7 @@ function completeOrder() {
   }
 }
 
+// Handle form submit
 function handleSubmit() {
   modal.style.display = 'none'
   contentContainer.classList.remove('blurred')
@@ -122,15 +123,15 @@ function orderedItems() {
   let ordersHtml = ``
   orders.forEach((order) => {
     ordersHtml += `
-    <div class="checkout-item">
-      <h3>
-        ${order.name}<button class="remove-item" data-remove='${order.id}'>remove</button>
-      </h3>
-      <p class="item-price">$${order.price}</p>
-    </div>`
+    <ul>
+    <li>${order.name}</li>
+  </ul>`
   })
+  menuSection.style.display = 'none'
+  document.querySelector('.ordered-list').innerHTML += ordersHtml
 }
 
+// CLose modal
 function closeModal() {
   modal.style.display = 'none'
   orderBtn.removeAttribute('disabled')
