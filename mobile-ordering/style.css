@@ -177,7 +177,7 @@ li {
 
 /* Completed Order Section */
 .ordered-list {
-  display: flex;
+  display: none;
   align-items: center;
   flex-direction: column;
   padding: 15px 0;

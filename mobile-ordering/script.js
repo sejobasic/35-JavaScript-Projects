@@ -120,15 +120,20 @@ function handleSubmit() {
 
 // Render ordered items list
 function orderedItems() {
+  const orderedList = document.querySelector('.ordered-list')
+
   let ordersHtml = ``
+
   orders.forEach((order) => {
     ordersHtml += `
-    <ul>
-    <li>${order.name}</li>
-  </ul>`
+      <ul>
+        <li>${order.name}</li>
+      </ul>
+  `
   })
   menuSection.style.display = 'none'
-  document.querySelector('.ordered-list').innerHTML += ordersHtml
+  orderedList.style.display = 'flex'
+  orderedList.innerHTML += ordersHtml
 }
 
 // CLose modal
