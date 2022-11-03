@@ -53,17 +53,14 @@ h3 {
   margin: 0 auto;
 }
 
-.menu-section {
-  border-bottom: 1px solid var(--accent-color);
-  margin: 50px 0;
-}
-
 .food-item-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 25px;
   padding-bottom: 50px;
+  border-bottom: 1px solid var(--accent-color);
+  margin: 50px 0;
 }
 
 .food-item-container img {
