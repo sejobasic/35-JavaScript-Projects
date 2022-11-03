@@ -10,6 +10,9 @@ document.addEventListener('click', (e) => {
   if (e.target.dataset.add) {
     addItem(e.target.dataset.add)
   }
+  if (e.target.dataset.remove) {
+    removeItem(e.target.dataset.remove)
+  }
 })
 
 // Iterate through data and render main food items inside content container
@@ -33,21 +36,23 @@ function renderFoodItems() {
   menuSection.innerHTML = menuHtml
 }
 
-
 // Add item to order
 function addItem(itemId) {
-  let ordersHtml = ``
   const orderedItemObj = menuArray.filter((item) => {
     return item.id === itemId
   })[0]
   orders.push(orderedItemObj)
 
+  renderCheckout()
+}
 
+function renderCheckout() {
+  let ordersHtml = ``
   orders.forEach((order) => {
     ordersHtml += `
     <div class="checkout-item">
       <h3>
-        ${order.name}<button class="remove-item">remove</button>
+        ${order.name}<button class="remove-item" data-remove='${order.id}'>remove</button>
       </h3>
       <p class="item-price">$${order.price}</p>
     </div>`
@@ -59,9 +64,15 @@ function addItem(itemId) {
 function calculateTotal() {
   let sum = 0
   orders.forEach((order) => {
-    return sum += order.price
+    return (sum += order.price)
   })
   totalPrice.textContent = `$${sum}`
+}
+
+function removeItem(itemId) {
+  const targetOrder = orders.map((order) => order.id).indexOf(itemId)
+  orders.splice(targetOrder, 1)
+  renderCheckout()
 }
 
 renderFoodItems()
