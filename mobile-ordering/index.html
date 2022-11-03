@@ -16,29 +16,44 @@
       </header>
     </div>
 
+    <div class="modal-container">
+      <button class="close-modal-btn" data-close="close">X</button>
+      <h3>Enter card details</h3>
+      <form class="modal-form">
+        <input type="text" placeholder="Enter full name" required />
+        <input
+          type="tel"
+          inputmode="numeric"
+          pattern="[0-9\s]{13,19}"
+          maxlength="19"
+          placeholder="Enter card number"
+          required
+        />
+        <input
+          type="tel"
+          inputmode="numeric"
+          pattern="[0-9]"
+          maxlength="3"
+          placeholder="Enter CVV"
+          required
+        />
+        <button class="order-btn" disabled>Pay</button>
+      </form>
+    </div>
+
     <div class="content-container">
-      <section class="menu-section">
-        
-      </section>
-      
+      <section class="menu-section"></section>
+
       <section class="checkout-section">
         <h4>Your order</h4>
-        <div class="checkout-container">
-          <!-- <div class="checkout-item">
-            <h3>
-              Cheeseburger<button class="remove-item">remove</button>
-            </h3>
-            <p class="item-price">$12</p>
-          </div> -->
-        </div>
+        <div class="checkout-container"></div>
         <div class="line"></div>
         <div class="total-container">
           <h3>Total price:</h3>
           <p class="total-price"></p>
         </div>
-        <button class="order-btn">Complete order</button>
+        <button class="order-btn complete" data-complete="complete" disabled>Complete order</button>
       </section>
-      
     </div>
     <script src="script.js" type="module"></script>
   </body>
