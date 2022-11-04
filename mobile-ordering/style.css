@@ -18,12 +18,12 @@ body {
   font-family: 'Open Sans', sans-serif;
   background: var(--bg-color);
   color: var(--primary-color);
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 /* Global Styles */
 header {
-  width: 420px;
+  width: 425px;
   margin: 0 auto;
   background-image: url(./images/hero.jpg);
   background-position: center;
