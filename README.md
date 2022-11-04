@@ -9,7 +9,7 @@
 ## Twitter Clone
 [LINK TO APP](https://tweeta-clone-project.netlify.app/)
 ### Like, Retweet and toggle comment UI interactivity  
-<img  alt="Screen Shot 1" src="./img/tweeta.png">
+<img  alt="Screen Shot 1" src="./img/twitter.png">
 <hr />
 
 ## Password Generator
