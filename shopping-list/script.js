@@ -4,15 +4,22 @@ const list = document.querySelector('.list')
 
 let shoppingList = []
 
+if (localStorage.getItem('list')) {
+  shoppingList = JSON.parse(localStorage.getItem('list'))
+}
+
+// Only push into array if value is greater than 1
 addItemBtn.addEventListener('click', function () {
-  
-  shoppingList.push(itemInput.value)
-  render()
-  itemInput.value = ''
+  if (itemInput.value.length > 1) {
+    shoppingList.push(itemInput.value)
+    render()
+    saveToStorage()
+    itemInput.value = ''
+  }
 })
 
 function render() {
-  let html = []
+  let html = ``
   for (let item of shoppingList) {
     html += `
     <div class='list-item-container'>
@@ -24,10 +31,15 @@ function render() {
   list.innerHTML = html
 }
 
+function saveToStorage() {
+  localStorage.setItem('list', JSON.stringify(shoppingList))
+}
+
 list.addEventListener('click', (e) => {
   document.getElementById(e.target.id).parentElement.remove()
-  shoppingList.forEach(item => item !== e.target.id)
-  // shoppingList = []
+  const targetItem = shoppingList.map((item) => item.id).indexOf(e.target.id)
+  shoppingList.splice(targetItem, 1)
+  saveToStorage()
 })
 
 render()

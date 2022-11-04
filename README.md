@@ -13,6 +13,7 @@
 <hr />
 
 ## Password Generator
+[LINK TO APP](js-password-gen.netlify.app)
 ### Generate a random 15 character password and copy to clipboard.
 <img  alt="Screen Shot 1" src="./img/password.png">
 <hr />
@@ -23,6 +24,7 @@
 <hr />
 
 ## GitHub Profile Finder
+[LINK TO APP](js-github-profilefinder.netlify.app)
 ### Fetching the GitHub API displaying user data.
 <img  alt="Screen Shot 1" src="./img/git.png">
 <hr />
@@ -33,6 +35,7 @@
 <hr />
 
 ## Notes
+[LINK TO APP](jssimple-notes-app.netlify.app)
 ### Simple notepad app that stores note state in local storage.
 <img  alt="Screen Shot 1" src="./img/notes.png">
 <hr />
