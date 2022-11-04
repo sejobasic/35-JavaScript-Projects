@@ -34,6 +34,11 @@ h1 {
   margin: 50px auto;
 }
 
+.container img {
+  width: 100px;
+  margin: 0 auto 40px;
+}
+
 .list-item-container {
   display: flex;
   align-items: center;
