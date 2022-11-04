@@ -20,7 +20,7 @@
 
 ## Shopping List
 [LINK TO APP](listyapp.netlify.app)
-### Shopping list mobile UI
+### Simple Shopping list for mobile 
 <img  alt="Screen Shot 1" src="./img/listy.png">
 <hr />
 
