@@ -136,7 +136,7 @@ function orderedItems() {
   orderedList.innerHTML += ordersHtml
 }
 
-// CLose modal
+// Close modal and toggle ui
 function closeModal() {
   modal.style.display = 'none'
   orderBtn.removeAttribute('disabled')

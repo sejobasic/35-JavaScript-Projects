@@ -20,6 +20,7 @@ body {
   color: var(--primary-color);
 }
 
+/* Global Styles */
 header {
   width: 475px;
   margin: 0 auto;
@@ -33,7 +34,6 @@ header {
   margin-bottom: 80px;
 }
 
-/* Global Styles */
 h1,
 h3 {
   margin: 0;
