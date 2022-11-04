@@ -12,13 +12,15 @@ const orders = []
 
 // Listen for add, remove and complete order buttons
 document.addEventListener('click', (e) => {
-  if (e.target.dataset.add) {
-    addItem(e.target.dataset.add)
-  } else if (e.target.dataset.remove) {
-    removeItem(e.target.dataset.remove)
-  } else if (e.target.dataset.complete) {
+  let target = e.target.dataset
+
+  if (target.add) {
+    addItem(target.add)
+  } else if (target.remove) {
+    removeItem(target.remove)
+  } else if (target.complete) {
     completeOrder()
-  } else if (e.target.dataset.close) {
+  } else if (target.close) {
     closeModal()
   }
 })
@@ -53,9 +55,9 @@ function renderFoodItems() {
 
 // Add item to order
 function addItem(itemId) {
-  const orderedItemObj = menuArray.filter((item) => {
+  const orderedItemObj = menuArray.find((item) => {
     return item.id === itemId
-  })[0]
+  })
   orders.push(orderedItemObj)
 
   orderBtn.removeAttribute('disabled')
