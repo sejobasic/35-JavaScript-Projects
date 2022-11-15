@@ -42,7 +42,7 @@
 <hr />
 
 ## Mock Splash Page
-### Splash page UI with sing-up form
+### Splash page UI with sign up form
 <img  alt="Screen Shot 1" src="./img/splash.png">
 <hr />
 
