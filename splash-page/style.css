@@ -125,3 +125,14 @@ input:focus {
 .btn-primary:focus {
   background-color: var(--hover-color);
 }
+
+/* SUCCESS SECTION */
+.success-wrapper i {
+  font-size: 4rem;
+  color: var(--btn-color);
+}
+
+.success-wrapper .success-text {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
