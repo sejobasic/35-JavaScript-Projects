@@ -41,6 +41,11 @@
 <img  alt="Screen Shot 1" src="./img/notes.png">
 <hr />
 
+## Mock Splash Page
+### Splash page UI with sing-up form
+<img  alt="Screen Shot 1" src="./img/splash.png">
+<hr />
+
 ## Expanding Cards
 ### Card animation using CSS.
 <img  alt="Screen Shot 1" src="./img/cards.png">
