@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
+:root {
+  --bg-color: #f2f7f5;
+  --text-color: #00473e;
+  --btn-color: #faae2b;
+  --hover-color: #ffc053;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,5 +14,114 @@
 }
 
 body {
+  display: flex;
+  height: 100%;
   font-family: 'Open Sans', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+i {
+  font-size: 3rem;
+}
+
+.intro-content p,
+.subheading {
+  color: var(--btn-color);
+}
+
+.intro-content {
+  min-height: 100vh;
+}
+
+.intro-content,
+.main-content {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 2em;
+  text-align: center;
+}
+
+.intro-content {
+  width: 50%;
+  background-image: url(https://images.unsplash.com/photo-1625863648813-91c92c5ea7ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTF8fGNvZmZlZSUyMGJlYW5zfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60);
+  background-size: cover;
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.403);
+  color: var(--bg-color);
+}
+
+.intro-content h1 {
+  font-size: 4rem;
+  text-transform: uppercase;
+  max-width: 600px;
+}
+
+.intro-content p {
+  font-size: 1.5rem;
+  line-height: 1.35;
+}
+
+.main-content h2 {
+  font-size: 3rem;
+}
+
+.main-content p {
+  margin-bottom: 1em;
+  max-width: 600px;
+}
+
+.subheading {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 2em;
+}
+
+.fine-print {
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  color: #858585;
+}
+
+/* FORM SECTION */
+input,
+button {
+  font-family: inherit;
+  width: 100%;
+  border-radius: 5px;
+}
+
+input {
+  padding: 1em;
+  margin-bottom: 0.75em;
+  border: 2px solid #d1d5db;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--btn-color);
+  background-color: #e6e8ec;
+}
+
+.btn {
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 1px;
+  padding: 1em 0;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  color: white;
+  background-color: var(--btn-color);
+  margin-top: 1em;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--hover-color);
 }
