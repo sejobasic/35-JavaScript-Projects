@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
+:root {
+  --text-color: rgb(57, 57, 57);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,7 +13,7 @@
 body {
   font-family: 'Muli', sans-serif;
   height: 100%;
-  color: black;
+  color: var(--text-color);
 }
 
 h1, h2, h3 {
@@ -18,7 +22,7 @@ h1, h2, h3 {
 
 a {
   text-decoration: none;
-  color: black;
+  color: var(--text-color);
 }
 
 li {
@@ -87,4 +91,27 @@ nav {
 
 .grid-item img {
   max-width: 100%;
+  cursor: pointer;
+}
+
+.grid-btn {
+  display: block;
+  margin: 0 auto;
+  color: var(--text-color);
+  border: none;
+  background: none;
+  text-decoration: underline;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding-bottom: 5em;
+}
+
+footer {
+  width: 100%;
+  background: rgb(57, 57, 57);
+  color: whitesmoke;
+  padding: 2em;
+  text-align: center;
 }
