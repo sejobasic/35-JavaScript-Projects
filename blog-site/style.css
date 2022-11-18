@@ -9,4 +9,56 @@
 body {
   font-family: 'Muli', sans-serif;
   height: 100%;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+li {
+  list-style: none;
+}
+
+.main-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+nav {
+  padding: 2em 0;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1em;
+}
+
+.nav-item:first-child {
+  font-size: 2rem;
+  margin-right: auto;
+}
+
+.hero-section {
+  position: relative;
+  min-height: 600px;
+  background-image: url(./images/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4);
+}
+
+
+.hero-content {
+  position: absolute;
+  bottom: 2em;
+  color: whitesmoke;
+}
+
+.hero-content p {
+  max-width: 600px;
 }
