@@ -12,6 +12,10 @@ body {
   color: black;
 }
 
+h1, h2, h3 {
+  margin: 0;
+}
+
 a {
   text-decoration: none;
   color: black;
@@ -61,4 +65,26 @@ nav {
 
 .hero-content p {
   max-width: 600px;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2em;
+  padding: 2em;
+}
+
+.grid-item span {
+  display: block;
+  padding: 1em 0 2em;
+  color: rgb(160, 160, 160);
+}
+
+.grid-item h2 {
+  padding-bottom: 0.5em;
+}
+
+
+.grid-item img {
+  max-width: 100%;
 }
