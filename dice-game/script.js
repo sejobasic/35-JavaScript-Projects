@@ -1,10 +1,6 @@
 import characterData from './data.js'
+import { getDiceRollArray } from './data.js'
 
-function getDiceRollArray(diceCount) {
-  return new Array(diceCount).fill(0).map(function () {
-    return Math.floor(Math.random() * 6) + 1
-  })
-}
 
 function Character(data) {
   Object.assign(this, data)
