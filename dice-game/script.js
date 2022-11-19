@@ -37,7 +37,7 @@ function Character(data) {
   this.diceCount = data.diceCount;
 
   this.getCharacterHtml = function () {
-      const { elementId, name, avatar, health, diceCount } = data;
+      const { elementId, name, avatar, health, diceCount } = this;
       const diceHtml = getDiceHtml(diceCount)
 
       document.getElementById(elementId).innerHTML =
