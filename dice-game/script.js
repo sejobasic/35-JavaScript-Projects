@@ -15,7 +15,7 @@ function getDiceHtml(diceCount) {
 const hero = {
   elementId: 'hero',
   name: 'Wizard',
-  avatar: 'images/wizard.png',
+  avatar: './images/wizard.png',
   health: 60,
   diceCount: 3,
 }
@@ -23,19 +23,14 @@ const hero = {
 const monster = {
   elementId: 'monster',
   name: 'Orc',
-  avatar: 'images/orc.png',
+  avatar: './images/orc.png',
   health: 10,
   diceCount: 1,
 }
 
 
 function Character(data) {
-  this.elementId = data.elementId;
-  this.name = data.name;
-  this.avatar = data.avatar;
-  this.health = data.health;
-  this.diceCount = data.diceCount;
-
+  Object.assign(this, data)
   this.getCharacterHtml = function () {
       const { elementId, name, avatar, health, diceCount } = this;
       const diceHtml = getDiceHtml(diceCount)
