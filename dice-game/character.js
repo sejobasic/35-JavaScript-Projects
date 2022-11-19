@@ -1,6 +1,6 @@
 import { getDiceRollArray } from './utils.js'
 
-export default function Character(data) {
+function Character(data) {
   Object.assign(this, data)
 
   this.getDiceHtml = function (diceCount) {
@@ -24,3 +24,5 @@ export default function Character(data) {
       </div>`
   }
 }
+
+export default Character

@@ -1,8 +1,6 @@
 import characterData from './data.js'
 import Character from './character.js'
 
-
-
 const wizard = new Character(characterData.hero)
 const orc = new Character(characterData.monster)
 
