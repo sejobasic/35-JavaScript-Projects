@@ -69,6 +69,7 @@ nav {
 
 .hero-content p {
   max-width: 600px;
+  padding-right: 1em;
 }
 
 .blog-grid {
@@ -92,6 +93,12 @@ nav {
 .grid-item img {
   max-width: 100%;
   cursor: pointer;
+  transition: filter 0.7s ease-in-out;
+  filter: grayscale();
+}
+
+.grid-item img:hover {
+  filter: none;
 }
 
 .grid-btn {
