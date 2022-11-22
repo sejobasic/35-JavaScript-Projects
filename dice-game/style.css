@@ -26,11 +26,9 @@ main {
 }
 
 .character-card {
-  height: 14rem;
+  width: 2px;
   margin-top: 0.5rem;
-  width: 94vw;
-  max-width: 230px;
-  padding: 1vh 1vw;
+  padding: 1em 1em;
   font-size: 1.6rem;
   color: white;
   border-radius: 14px;
@@ -44,10 +42,10 @@ main {
 }
 
 .name {
-  margin: 1vh 0;
+  margin: 1em 0;
   width: 100%;
   letter-spacing: 0.08em;
-  font-size: 90%;
+  font-size: 2rem;
 }
 
 .avatar {
@@ -60,11 +58,11 @@ main {
 }
 
 .health {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   font-weight: normal;
   width: 90%;
   text-align: left;
-  margin: 1vh 5%;
+  margin: 1em 5%;
   color: #ccc;
   letter-spacing: 0.03em;
 }
@@ -108,14 +106,13 @@ main {
 
 .dice,
 .placeholder-dice {
-  height: 5.5vh;
-  width: 5.5vh;
+  height: 50px;
+  width: 50px;
   background: #fff;
   border-radius: 5px;
   border: 1px solid #666;
   color: #000721;
   text-align: center;
-  line-height: 6vh;
 }
 
 .dice-container .placeholder-dice {
@@ -157,36 +154,34 @@ button:focus {
 @media (min-width: 550px) {
   main {
     flex-direction: row;
-    margin: 6vh 5vw;
+    margin: 6em 5em;
     justify-content: center;
-    width: 86vw;
+    width: 100%;
     gap: 2rem;
   }
   .character-card {
     border: 0.2rem solid #000721;
-    height: 26rem;
-    width: 37vw;
+    height: 600px;
+    width: 600px;
   }
   .name {
-    margin: 2vh 0;
-    font-size: 100%;
+    margin: 1em 0;
   }
   .avatar {
-    width: 25vh;
+    width: 150px;
   }
   .health {
-    margin: 2vh 5%;
+    margin: 1em 5%;
   }
   .dice-container {
-    height: 30%;
+    padding: 1em;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
   }
   .dice-container .dice,
   .dice-container .placeholder-dice {
-    height: 10vh;
-    width: 10vh;
-    line-height: 10.5vh;
+    height: 50px;
+    width: 50px;
   }
   button {
     margin-top: 0;
