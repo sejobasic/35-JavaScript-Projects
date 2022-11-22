@@ -5,7 +5,7 @@ function Character(data) {
 
   this.diceArray = getDicePlaceholderHtml(this.diceCount)
 
-  this.getDiceHtml = function() {
+  this.getDiceHtml = function () {
     this.currentDiceScore = getDiceRollArray(this.diceCount)
     this.diceArray = this.currentDiceScore
       .map((num) => {
@@ -14,7 +14,7 @@ function Character(data) {
       .join('')
   }
 
-  this.takeDamage = function(attackScoreArray) {
+  this.takeDamage = function (attackScoreArray) {
     const totalAttackScore = attackScoreArray.reduce((total, current) => {
       return total + current
     })
@@ -22,11 +22,13 @@ function Character(data) {
     this.health -= totalAttackScore
 
     if (this.health <= 0) {
+      this.dead = true
       this.health = 0
+      console.log(this.dead)
     }
   }
 
-  this.getCharacterHtml = function() {
+  this.getCharacterHtml = function () {
     const { elementId, name, avatar, health, diceCount, diceArray } = this
 
     return `<div class="character-card">
