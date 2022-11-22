@@ -1,4 +1,8 @@
-import { getDiceRollArray, getDicePlaceholderHtml, getPercentage } from './utils.js'
+import {
+  getDiceRollArray,
+  getDicePlaceholderHtml,
+  getPercentage,
+} from './utils.js'
 
 function Character(data) {
   Object.assign(this, data)
@@ -28,12 +32,17 @@ function Character(data) {
       this.health = 0
       console.log(this.dead)
     }
+  }
 
-    console.log(getPercentage(this.health, this.maxHealth))
+  this.getHealthBarHtml = function () {
+    const percent = getPercentage(this.health, this.maxHealth)
+
+    console.log(percent)
   }
 
   this.getCharacterHtml = function () {
     const { elementId, name, avatar, health, diceCount, diceArray } = this
+    const healthBar = this.getHealthBarHtml()
 
     return `<div class="character-card">
           <h4 class="name"> ${name} </h4>
