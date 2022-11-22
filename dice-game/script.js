@@ -6,7 +6,7 @@ const orc = new Character(characterData.monster)
 
 document.getElementById('attack-button').addEventListener('click', attack)
 
-const attack = () => {
+function attack() {
   wizard.getDiceHtml()
   orc.getDiceHtml()
   wizard.takeDamage(orc.currentDiceScore)
@@ -18,7 +18,7 @@ const attack = () => {
   }
 }
 
-const endGame = () => {
+function endGame() {
   const endMessage =
     wizard.health === 0 && orc.health === 0
       ? 'No victors - all creatures are dead'
@@ -36,7 +36,7 @@ const endGame = () => {
   </div>`
 }
 
-const render = () => {
+function render() {
   document.getElementById(wizard.elementId).innerHTML =
     wizard.getCharacterHtml()
   document.getElementById(orc.elementId).innerHTML = orc.getCharacterHtml()
