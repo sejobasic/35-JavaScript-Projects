@@ -8,7 +8,8 @@ const orc = new Character(characterData.monster)
 document.getElementById('attack-button').addEventListener('click', attack)
 
 function attack() {
-  getDiceRollArray()
+  wizard.getDiceHtml()
+  orc.getDiceHtml()
   render()
 }
 
