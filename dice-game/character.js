@@ -15,7 +15,11 @@ function Character(data) {
   }
 
   this.takeDamage = function(attackScoreArray) {
-    console.log(`${this.name}: ${attackScoreArray}`)
+    const totalAttackScore = attackScoreArray.reduce((total, current) => {
+      return total + current
+    })
+
+    this.health -= totalAttackScore
   }
 
   this.getCharacterHtml = function() {
