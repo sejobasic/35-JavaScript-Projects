@@ -41,7 +41,7 @@ function Character(data) {
 
     return `<div class="health-bar-outer">
       <div class="health-bar-inner ${healthMessage} " 
-          style="width: ${percent} %;">
+          style="width: ${percent}%;">
       </div>
       </div>`
   }
