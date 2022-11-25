@@ -2,6 +2,7 @@ import characterData from './data.js'
 import Character from './character.js'
 
 let monstersArray = ['orc', 'elf', 'goblin']
+let isWaiting = false
 
 function getNewMonster() {
   const nextMonsterData = characterData[monstersArray.shift()]
@@ -9,25 +10,32 @@ function getNewMonster() {
 }
 
 function attack() {
-  wizard.getDiceHtml()
-  monster.getDiceHtml()
-  wizard.takeDamage(monster.currentDiceScore)
-  monster.takeDamage(wizard.currentDiceScore)
-  render()
+  if (!isWaiting) {
+    wizard.setDiceHtml()
+    monster.setDiceHtml()
+    wizard.takeDamage(monster.currentDiceScore)
+    monster.takeDamage(wizard.currentDiceScore)
+    render()
 
-  if (wizard.dead) {
-    endGame()
-  } else if (monster.dead) {
-    if (monstersArray.length > 0) {
-      monster = getNewMonster()
-      render()
-    } else {
+    if (wizard.dead) {
       endGame()
+    } else if (monster.dead) {
+      isWaiting = true
+      if (monstersArray.length > 0) {
+        setTimeout(() => {
+          monster = getNewMonster()
+          render()
+          isWaiting = false
+        }, 1500)
+      } else {
+        endGame()
+      }
     }
   }
 }
 
 function endGame() {
+  isWaiting = true
   const endMessage =
     wizard.health === 0 && monster.health === 0
       ? 'No victors - all creatures are dead'
@@ -37,14 +45,17 @@ function endGame() {
 
   const endEmoji = wizard.health > 0 ? '🔮' : '☠️'
 
-  document.body.innerHTML = `<div class="end-game">
-      <h2>Game Over</h2>
-      <h3>${endMessage}</h3>
-      <p class="end-emoji">${endEmoji}</p>
-  </div>`
+  setTimeout(() => {
+    document.body.innerHTML = `<div class="end-game">
+        <h2>Game Over</h2>
+        <h3>${endMessage}</h3>
+        <p class="end-emoji">${endEmoji}</p>
+    </div>`
+  }, 1500)
 }
 
-document.getElementById('attack-button').addEventListener('click', attack)
+document.getElementById("attack-button").addEventListener('click', attack)
+
 
 function render() {
   document.getElementById('hero').innerHTML = wizard.getCharacterHtml()

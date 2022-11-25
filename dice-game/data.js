@@ -17,7 +17,7 @@ const characterData = {
   elf: {
     name: 'Elf',
     avatar: 'images/elf.png',
-    health: 25,
+    health: 60,
     diceCount: 2,
     currentDiceScore: [],
   },
@@ -27,6 +27,6 @@ const characterData = {
     health: 20,
     diceCount: 3,
     currentDiceScore: [],
-  }
+  },
 }
 export default characterData
