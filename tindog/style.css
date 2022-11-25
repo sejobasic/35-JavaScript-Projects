@@ -1,12 +1,95 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    height: 100%;
-    font-family: 'Muli', sans-serif;
+  height: 100%;
+  font-family: 'Muli', sans-serif;
+  background: whitesmoke;
+}
+
+button {
+  border: none;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 480px;
+  margin: 0 auto;
+}
+
+header {
+  width: 100%;
+  padding: 1em;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+nav button img {
+  width: 30px;
+}
+
+nav .logo-btn {
+  background: linear-gradient(0.25turn, #fa695a, #f83375);
+  padding: 1em 3em;
+  border-radius: 2em;
+}
+
+.main-content {
+  position: relative;
+  color: whitesmoke;
+}
+
+.user-avatar {
+  width: 100%;
+  border-radius: 0.7em;
+}
+
+.user-info {
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+}
+
+.user-name {
+  font-size: 2rem;
+  margin-bottom: 0.2em;
+}
+
+.user-bio {
+  font-size: 1rem;
+}
+
+.choice-btn-container {
+  width: 100%;
+  display: flex;
+  gap: 2em;
+  padding: 1em;
+}
+
+.choice-btn-container button img {
+  width: 50px;
+}
+
+.choice-btn-container button {
+    background: whitesmoke;
+  border-radius: 50%;
+  padding: 2em;
+  cursor: pointer;
+  filter: drop-shadow(0 0.7em 0.6em #e2e2e3);
 }
