@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
+
+/* Global styles */
 * {
   margin: 0;
   padding: 0;
@@ -23,6 +25,9 @@ button {
   width: 480px;
   margin: 0 auto;
 }
+
+
+/* Header and navigation */
 
 header {
   width: 100%;
@@ -50,6 +55,9 @@ nav .logo-btn {
   border-radius: 2em;
 }
 
+
+/* Main content */
+
 .main-content {
   position: relative;
   color: whitesmoke;
@@ -75,6 +83,7 @@ nav .logo-btn {
   font-size: 1rem;
 }
 
+/* Choice buttons */
 .choice-btn-container {
   width: 100%;
   display: flex;
@@ -87,9 +96,19 @@ nav .logo-btn {
 }
 
 .choice-btn-container button {
-    background: whitesmoke;
+  background: whitesmoke;
   border-radius: 50%;
   padding: 2em;
   cursor: pointer;
   filter: drop-shadow(0 0.7em 0.6em #e2e2e3);
+}
+
+.nope-btn:hover {
+  background: #ffe7ef;
+  filter: drop-shadow(0 0.7em 0.6em #ecd5dd);
+}
+
+.like-btn:hover {
+  background: #dbfff4;
+  filter: drop-shadow(0 0.7em 0.6em #cef0e6);
 }
