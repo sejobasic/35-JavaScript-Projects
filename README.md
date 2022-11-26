@@ -1,4 +1,4 @@
-# A Collection of short Projects done in Raw HTML/CSS/JavaScript.
+# A Collection of mini Projects done in Raw HTML/CSS/JavaScript.
 
 ## Mock Mobile Ordering
 [LINK TO APP](https://mobile-ordering.netlify.app)
