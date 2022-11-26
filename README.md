@@ -57,7 +57,7 @@
 <hr />
 
 ## Scoreboard
-### Keep score for a game with increments.
+### Keep score for any game.
 <img  alt="Screen Shot 1" src="./img/score.png">
 <hr />
 
