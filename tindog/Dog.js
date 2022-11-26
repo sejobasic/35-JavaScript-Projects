@@ -7,19 +7,13 @@ class Dog {
     this.hasBeenLiked = bool
     this.hasBeenSwiped = false
 
-    return this.hasBeenLiked ? `<img class='status-banner' src='./images/like-image.png' alt='like banner icon'/>` : `<img class='status-banner' src='./images/nope-image.png' alt='like banner icon'/>`
+    return this.hasBeenLiked
+      ? `<img class='status-banner' src='./images/like-image.png' alt='like banner icon'/>`
+      : `<img class='status-banner' src='./images/nope-image.png' alt='like banner icon'/>`
   }
 
-  // setLiked(bool) {
-  //   this.hasBeenLiked = bool
-
-
-
-  //   return `<img class='status-banner' src='./images/like-image.png' alt='like banner icon'/>`
-  // }
-
   setDogHtml() {
-    const {name, avatar, age, bio} = this
+    const { name, avatar, age, bio } = this
 
     return `
         <img class="dog-avatar" src="${avatar}" alt="dog avatar" />
