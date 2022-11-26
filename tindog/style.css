@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
-
 /* Global styles */
 * {
   margin: 0;
@@ -25,7 +24,6 @@ button {
   width: 480px;
   margin: 0 auto;
 }
-
 
 /* Header and navigation */
 
@@ -55,10 +53,10 @@ nav .logo-btn {
   border-radius: 2em;
 }
 
-
 /* Main content */
 
 .main-content {
+  width: 100%;
   position: relative;
   color: whitesmoke;
 }
@@ -83,12 +81,26 @@ nav .logo-btn {
   font-size: 1rem;
 }
 
+.dog-avatar,
+.dog-info {
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .status-banner {
-    position: absolute;
-    width: 150px;
-    rotate: -25deg;
-    top: 3em;
-    left: 3em;
+  position: absolute;
+  width: 150px;
+  rotate: -25deg;
+  top: 3em;
+  left: 3em;
 }
 
 /* Choice buttons */
@@ -111,7 +123,7 @@ nav .logo-btn {
   filter: drop-shadow(0 0.7em 0.6em #e2e2e3);
 }
 
-.nope-btn:hover {
+.swipe-btn:hover {
   background: #ffe7ef;
   filter: drop-shadow(0 0.7em 0.6em #ecd5dd);
 }
@@ -119,4 +131,12 @@ nav .logo-btn {
 .like-btn:hover {
   background: #dbfff4;
   filter: drop-shadow(0 0.7em 0.6em #cef0e6);
+}
+
+.modal {
+    background: linear-gradient(0.25turn, #fa695a, #f83375);
+    padding: 2em 3em;
+    border-radius: 1em;
+    color: whitesmoke;
+    margin: 50px auto;
 }
