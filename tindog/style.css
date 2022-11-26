@@ -63,24 +63,32 @@ nav .logo-btn {
   color: whitesmoke;
 }
 
-.user-avatar {
+.dog-avatar {
   width: 100%;
   border-radius: 0.7em;
 }
 
-.user-info {
+.dog-info {
   position: absolute;
   bottom: 1em;
   left: 1em;
 }
 
-.user-name {
+.dog-name-age {
   font-size: 2rem;
   margin-bottom: 0.2em;
 }
 
-.user-bio {
+.dog-bio {
   font-size: 1rem;
+}
+
+.status-banner {
+    position: absolute;
+    width: 150px;
+    rotate: -25deg;
+    top: 3em;
+    left: 3em;
 }
 
 /* Choice buttons */
