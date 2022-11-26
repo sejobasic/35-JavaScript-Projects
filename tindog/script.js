@@ -2,14 +2,18 @@ import dogs from './data.js'
 import Dog from './Dog.js'
 
 const mainContent = document.querySelector('.main-content')
+const btnContainer = document.querySelector('.choice-btn-container')
+const modal = document.querySelector('.modal')
 const likeBtn = document.querySelector('.like-btn')
 const swipeBtn = document.querySelector('.swipe-btn')
+const logoBtn = document.querySelector('.logo-btn')
 
 let currentDogIndex = 0
 let currentDog = new Dog(dogs[currentDogIndex])
 
 likeBtn.addEventListener('click', isLiked)
 swipeBtn.addEventListener('click', isSwiped)
+logoBtn.addEventListener('click', refreshDogs)
 
 renderDog()
 
@@ -24,17 +28,22 @@ function getNewDog() {
   if (currentDogIndex < 3) {
     renderDog()
   } else {
-    document.querySelector(
-      '.choice-btn-container'
-    ).innerHTML = `
-        <div class='modal'>
-            <h1>No more doggos in your area.</h1>
-        </div>`
+    modal.style.display = 'block'
+    btnContainer.style.display = 'none'
     mainContent.style.display = 'none'
   }
 
   swipeBtn.disabled = false
   likeBtn.disabled = false
+}
+
+function refreshDogs() {
+  modal.style.display = 'none'
+  mainContent.style.display = 'block'
+  btnContainer.style.display = 'flex'
+  currentDogIndex = 0
+  currentDog = new Dog(dogs[currentDogIndex])
+  renderDog()
 }
 
 function isLiked() {

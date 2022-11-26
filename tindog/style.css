@@ -134,9 +134,10 @@ nav .logo-btn {
 }
 
 .modal {
-    background: linear-gradient(0.25turn, #fa695a, #f83375);
-    padding: 2em 3em;
-    border-radius: 1em;
-    color: whitesmoke;
-    margin: 50px auto;
+  display: none;
+  background: linear-gradient(0.25turn, #fa695a, #f83375);
+  padding: 2em 3em;
+  border-radius: 1em;
+  color: whitesmoke;
+  margin: 50px auto;
 }
