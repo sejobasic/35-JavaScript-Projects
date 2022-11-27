@@ -9,4 +9,48 @@
 body {
   font-family: 'Muli', sans-serif;
   height: 100%;
+  background: #16161a;
+  color: #94a1b2;
+}
+
+.container {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+header h1 {
+  font-size: 5rem;
+  margin-top: 1em;
+  text-transform: uppercase;
+}
+
+.idea-container {
+  border-radius: ;
+  font-size: 1.2rem;
+  padding: 2em;
+  text-align: center;
+  margin: 2em 0;
+}
+
+button {
+  background: #7f5af0;
+  color: #fffffe;
+  border: 2px solid #2cb67d;
+  border-radius: 2em;
+  padding: 1em 3em;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #8a69ef;
+  filter: drop-shadow(0.1em 0.1em 0.5em #2cb67d);
+}
+
+button:active {
+  scale: 0.9;
 }
