@@ -27,10 +27,8 @@ header h1 {
   text-transform: uppercase;
 }
 
-.idea-container {
-  border-radius: ;
+.activity-container {
   font-size: 1.2rem;
-  padding: 2em;
   text-align: center;
   margin: 2em 0;
 }
