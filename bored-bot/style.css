@@ -27,6 +27,10 @@ header h1 {
   text-transform: uppercase;
 }
 
+header h3 {
+  text-align: center;
+}
+
 .activity-container {
   font-size: 1.2rem;
   text-align: center;
