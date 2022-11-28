@@ -1,3 +1,5 @@
+import { copyHexToClipboard } from './utils.js'
+
 const colorInput = document.querySelector('.color-input')
 const selectMode = document.querySelector('.select-mode')
 const colorContainer = document.querySelector('.color-container')
@@ -20,7 +22,7 @@ function getMode(e) {
 colorInput.addEventListener('change', getColor)
 selectMode.addEventListener('change', getMode)
 
-getColorBtn.addEventListener('click', function () {
+getColorBtn.addEventListener('click', () => {
   fetch(
     `https://www.thecolorapi.com/scheme?hex=${selectedColor}&mode=${selectedMode}`
   )
@@ -34,34 +36,18 @@ getColorBtn.addEventListener('click', function () {
 function renderColors() {
   let colorsHtml = ''
 
-  colorsArr.map((color, i) => {
+  colorsArr.map((color) => {
     colorsHtml += `
         <div 
           class='color-block' 
-          id=${i + 1} 
           style='background-color:${color.hex.value}'>
-          <p>${color.hex.value}</p>
+          <p style='display:none'>${color.hex.value}</p>
         </div>
         <h3 
-          class='hex-code' 
-          id=${i + 1}>${color.hex.value}
+          class='hex-code' >${color.hex.value}
         </h3>
       `
   })
   colorContainer.innerHTML = colorsHtml
   copyHexToClipboard()
-}
-
-function copyHexToClipboard() {
-  const colorBlock = [...document.getElementsByClassName('color-block')]
-  console.log(colorBlock)
-
-  colorBlock.forEach((el) => {
-    el.addEventListener('click', () => {
-      navigator.clipboard
-        .writeText(el.textContent)
-        .then(() => alert(`'${el.textContent}' copied to the clipboard`))
-        .catch(() => alert('copy failed'))
-    })
-  })
 }

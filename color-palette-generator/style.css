@@ -58,8 +58,12 @@ select {
 button {
   border: none;
   background-color: var(--btn-color);
-  padding: 0.5em;
+  padding: 0.6em 1em;
   text-transform: uppercase;
+}
+
+button:hover {
+  background-color: #495463;
 }
 
 .color-container {
@@ -72,15 +76,32 @@ button {
 
 .color-block {
   grid-row: 1 / 2;
-}
-
-.color-block p {
-  display: none;
-  height: 500px;
   cursor: pointer;
 }
 
 .hex-code {
   margin-top: 1rem;
   text-align: center;
+}
+
+.modal {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%, -50%);
+  background-color: var(--btn-color);
+  font-size: 1.5rem;
+  padding: 1em 2em;
+  border-radius: 0.3em;
+  animation: fadeIn 0.7s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
