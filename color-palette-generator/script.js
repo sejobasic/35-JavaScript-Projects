@@ -1,15 +1,11 @@
 const colorInput = document.querySelector('.color-input')
 const selectMode = document.querySelector('.select-mode')
 const colorContainer = document.querySelector('.color-container')
-const formEl = document.querySelector('.actions-container')
 const getColorBtn = document.querySelector('.get-color-btn')
 
 let colorsArr = []
 let selectedColor = colorInput.value.slice(1)
 let selectedMode = selectMode.value
-
-colorInput.addEventListener('change', getColor)
-selectMode.addEventListener('change', getMode)
 
 function getColor(e) {
   selectedColor = e.target.value.slice(1)
@@ -21,9 +17,10 @@ function getMode(e) {
   return selectedMode
 }
 
+colorInput.addEventListener('change', getColor)
+selectMode.addEventListener('change', getMode)
+
 getColorBtn.addEventListener('click', function () {
-  console.log(selectedColor)
-  console.log(selectedMode)
   fetch(
     `https://www.thecolorapi.com/scheme?hex=${selectedColor}&mode=${selectedMode}`
   )
@@ -36,14 +33,35 @@ getColorBtn.addEventListener('click', function () {
 
 function renderColors() {
   let colorsHtml = ''
-  console.log(colorsHtml)
 
-  for (let color of colorsArr) {
+  colorsArr.map((color, i) => {
     colorsHtml += `
-        <div class='color-block' style='background-color:${color.hex.value}'></div>
-        <h3 class='hex-code'>${color.hex.value}</h3>
+        <div 
+          class='color-block' 
+          id=${i + 1} 
+          style='background-color:${color.hex.value}'>
+          <p>${color.hex.value}</p>
+        </div>
+        <h3 
+          class='hex-code' 
+          id=${i + 1}>${color.hex.value}
+        </h3>
       `
-  }
-
+  })
   colorContainer.innerHTML = colorsHtml
+  copyHexToClipboard()
+}
+
+function copyHexToClipboard() {
+  const colorBlock = [...document.getElementsByClassName('color-block')]
+  console.log(colorBlock)
+
+  colorBlock.forEach((el) => {
+    el.addEventListener('click', () => {
+      navigator.clipboard
+        .writeText(el.textContent)
+        .then(() => alert(`'${el.textContent}' copied to the clipboard`))
+        .catch(() => alert('copy failed'))
+    })
+  })
 }

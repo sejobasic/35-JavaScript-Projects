@@ -74,6 +74,12 @@ button {
   grid-row: 1 / 2;
 }
 
+.color-block p {
+  display: none;
+  height: 500px;
+  cursor: pointer;
+}
+
 .hex-code {
   margin-top: 1rem;
   text-align: center;
