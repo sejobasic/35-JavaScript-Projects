@@ -79,6 +79,11 @@ button:hover {
   cursor: pointer;
 }
 
+.color-block:hover {
+  border: 1px solid var(--font-color);
+  opacity: 0.9;
+}
+
 .hex-code,
 .color-name {
   margin-top: 1rem;
