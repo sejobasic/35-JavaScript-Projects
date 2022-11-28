@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
+:root {
+  --bg-color: #1F2937;
+  --btn-color: #3D4B60;
+  --font-color: #D5D4D8;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,6 +15,8 @@
 body {
   font-family: 'Muli', sans-serif;
   height: 100%;
+  background-color: var(--bg-color);
+  color: var(--font-color);
 }
 
 .container {
