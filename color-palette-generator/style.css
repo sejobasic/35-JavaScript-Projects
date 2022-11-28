@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
 :root {
-  --bg-color: #1F2937;
-  --btn-color: #3D4B60;
-  --font-color: #D5D4D8;
+  --bg-color: #1f2937;
+  --btn-color: #3d4b60;
+  --font-color: #d5d4d8;
 }
 
 * {
@@ -17,8 +17,64 @@ body {
   height: 100%;
   background-color: var(--bg-color);
   color: var(--font-color);
+  overflow: hidden;
 }
 
 .container {
+  max-width: 600px;
   width: 90%;
+  margin: 5em auto;
+}
+
+.actions-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  padding-bottom: 2em;
+}
+
+input {
+  height: 50px;
+  width: 60px;
+  border-radius: 0.3em;
+  cursor: pointer;
+}
+
+select,
+button {
+  font-size: 1.5rem;
+  border-radius: 0.3em;
+  color: var(--font-color);
+  cursor: pointer;
+}
+
+select {
+  background-color: var(--bg-color);
+  padding: 0.5em 2em 0.5em 0.5em;
+}
+
+button {
+  border: none;
+  background-color: var(--btn-color);
+  padding: 0.5em;
+  text-transform: uppercase;
+}
+
+.color-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 1fr);
+  grid-template-rows: 500px 20px;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.color-block {
+  grid-row: 1 / 2;
+}
+
+.hex-code {
+  margin-top: 1rem;
+  text-align: center;
 }
