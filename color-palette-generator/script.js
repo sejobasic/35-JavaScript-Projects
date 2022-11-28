@@ -41,11 +41,9 @@ function renderColors() {
         <div 
           class='color-block' 
           style='background-color:${color.hex.value}'>
-          <p style='display:none'>${color.hex.value}</p>
+          <h3 class='hex-code'>${color.hex.value}</h3>
         </div>
-        <h3 
-          class='hex-code' >${color.hex.value}
-        </h3>
+        <h3 class='color-name'>${color.name.value}</h3>
       `
   })
   colorContainer.innerHTML = colorsHtml

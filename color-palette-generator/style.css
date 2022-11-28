@@ -69,7 +69,7 @@ button:hover {
 .color-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, 1fr);
-  grid-template-rows: 500px 20px;
+  grid-template-rows: 500px 50px 50px;
   width: 100%;
   margin-top: 2rem;
 }
@@ -79,9 +79,14 @@ button:hover {
   cursor: pointer;
 }
 
-.hex-code {
+.hex-code,
+.color-name {
   margin-top: 1rem;
   text-align: center;
+}
+
+.hex-code {
+  filter: drop-shadow(0.1em 0.1em 0.1em rgb(65, 65, 65));
 }
 
 .modal {
@@ -103,5 +108,11 @@ button:hover {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .actions-container {
+    flex-direction: column;
   }
 }
