@@ -14,13 +14,13 @@
 
 ## Password Generator
 [LINK TO APP](https://js-password-gen.netlify.app)
-### Generate a random 15 character password and copy to clipboard.
+### Generate a random 15 character password and uses clipboard web api to copy generated password.
 <img  alt="Screen Shot 1" src="./img/password.png">
 <hr />
 
 ## Shopping List
 [LINK TO APP](https://listyapp.netlify.app)
-### Simple Shopping list for mobile 
+### Simple Shopping list for mobile that uses local storage to store users lists
 <img  alt="Screen Shot 1" src="./img/listy.png">
 <hr />
 

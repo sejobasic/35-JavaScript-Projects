@@ -1,3 +1,16 @@
+function copyHexToClipboard() {
+  const colorBlock = [...document.getElementsByClassName('color-block')]
+  colorBlock.forEach((el) => {
+    el.addEventListener('click', () => {
+      // Access the systems clipboard using the clipboard api
+      navigator.clipboard
+        .writeText(el.textContent)
+        .then(() => showModal(el))
+        .catch(() => alert('copy failed'))
+    })
+  })
+}
+
 function showModal(el) {
   const modal = document.querySelector('.modal')
   modal.innerHTML = `
@@ -7,18 +20,6 @@ function showModal(el) {
   setTimeout(() => {
     modal.style.display = 'none'
   }, 1000)
-}
-
-function copyHexToClipboard() {
-  const colorBlock = [...document.getElementsByClassName('color-block')]
-  colorBlock.forEach((el) => {
-    el.addEventListener('click', () => {
-      navigator.clipboard
-        .writeText(el.textContent)
-        .then(() => showModal(el))
-        .catch(() => alert('copy failed'))
-    })
-  })
 }
 
 export { copyHexToClipboard }
