@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
+:root {
+  --bg: #121212;
+  --input: #2e2e2f;
+  --btn: #4b4b4b;
+  --text: #ffffff;
+  --sub-text: #a5a5a5;
+}
+
 /* Global styles */
 * {
   margin: 0;
@@ -10,5 +18,93 @@
 body {
   height: 100%;
   font-family: 'Muli', sans-serif;
-  background: whitesmoke;
+  background-color: var(--bg);
+  color: var(--sub-text);
+}
+
+.main-container {
+  width: 480px;
+  margin: 0 auto;
+}
+
+header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(./images/hero.jpeg);
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+  padding: 4em 1.2em;
+}
+
+.content-container,
+.header-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.content-container {
+  margin-top: -17px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+input {
+  position: relative;
+  width: 75%;
+  padding: 0.7em;
+  background-color: var(--input);
+  color: var(--sub-text);
+  border: none;
+  border-radius: 0.5em 0 0 0.5em;
+  outline: none;
+}
+
+.search-btn {
+  position: absolute;
+  background-color: var(--btn);
+  font-weight: bold;
+  color: var(--text);
+  text-transform: uppercase;
+  padding: 0.7em 2em;
+  border: none;
+  border-radius: 0 0.5em 0.5em 0;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #595959;
+}
+
+.movies-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  padding: 2em 0;
+  border-bottom: 1px solid var(--btn);
+}
+
+.movie-poster {
+  object-fit: cover;
+  width: 30%;
+  max-height: 100%;
+}
+
+.movie-title {
+  color: var(--text);
+  text-transform: uppercase;
+}
+
+.movie-actions {
+  display: flex;
+  gap: 0.7em;
+  font-size: 0.9rem;
+  padding: 0.5em 0 1.5em;
 }

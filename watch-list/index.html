@@ -9,7 +9,41 @@
     <title>Watch List</title>
   </head>
   <body>
-    <div class="container"></div>
+    <div class="main-container">
+      <header>
+        <div class="header-content">
+          <h1>Find your film</h1>
+          <h4>My Watchlist</h4>
+        </div>
+      </header>
+      <div class="content-container">
+        <input
+          type="search"
+          placeholder="Blade Runner"
+          aria-label="Search Input"
+        />
+        <button class="search-btn" type="submit">Search</button>
+
+        <div class="movies-container">
+          <img
+            class="movie-poster"
+            src="./images/placeholder.jpeg"
+            alt="movie poster"
+          />
+          <div class="movie-info">
+            <h3 class="movie-title">back to the future <span>8.5</span></h3>
+            <div class="movie-actions">
+              <h4 class="movie-genre">Drama, Mystery, Sci-Fi</h4>
+              <button class="add-btn">+ Watchlist</button>
+            </div>
+            <p class="movie-description">
+              A blade runner must pursue and terminate four replicants who stole
+              a ship in space, and have returned to Earth to find their creator.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="script.js" type="module"></script>
   </body>
 </html>
