@@ -22,15 +22,13 @@ function getMode(e) {
 colorInput.addEventListener('change', getColor)
 selectMode.addEventListener('change', getMode)
 
-getColorBtn.addEventListener('click', () => {
-  fetch(
+getColorBtn.addEventListener('click', async () => {
+  const resp = await fetch(
     `https://www.thecolorapi.com/scheme?hex=${selectedColor}&mode=${selectedMode}`
   )
-    .then((resp) => resp.json())
-    .then((data) => {
-      colorsArr = data.colors
-      renderColors()
-    })
+  const data = await resp.json()
+  colorsArr = data.colors
+  renderColors()
 })
 
 function renderColors() {
