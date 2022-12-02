@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  font-family: 'Muli', sans-serif;
+  background: whitesmoke;
+}
