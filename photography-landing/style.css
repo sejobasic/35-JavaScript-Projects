@@ -1,7 +1,57 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+:root {
+  --header1: calc(2rem + 1vw);
+  --header2: calc(3.5rem + 1vw);
+  --header3: calc(3rem + 1vw);
+  --header4: calc(2.4rem + 1vw);
+  --text: calc(1.5rem + 1vw);
+  --big-text: calc(2.4rem + 1vw);
+  --grey-text: #525252;
+  --bg-color: #414141;
+  --accent-color: #906272;
+}
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+h1 {
+  font-size: var(--header1);
+}
+
+h2 {
+  font-size: var(--header2);
+}
+
+h3 {
+  font-size: var(--header3);
+}
+
+h4 {
+  font-size: var(--header4);
+}
+
+li,
+button,
+label,
+input,
+p {
+  font-size: var(--text);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
 }
