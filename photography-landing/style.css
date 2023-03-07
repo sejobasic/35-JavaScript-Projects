@@ -270,6 +270,11 @@ nav {
     color: white;
     font-size: var(--header3);
   }
+
+  .gallery img {
+    grid-row: auto;
+    grid-column: auto;
+  }
 }
 
 @keyframes intro {
