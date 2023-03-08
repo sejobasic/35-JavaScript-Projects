@@ -27,6 +27,7 @@ function removeTodo(e) {
   const item = e.target
   console.log(item)
   if (item.classList[0] === 'remove-btn') {
-    item.remove()
+    const todo = item.parentElement
+    todo.remove()
   }
 }
