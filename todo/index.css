@@ -47,6 +47,12 @@ form button:hover {
   color: white;
 }
 
+button:hover[disabled] {
+  background-color: white;
+  color: rgb(149, 148, 148);
+  cursor: not-allowed;
+}
+
 .todo-container {
   display: flex;
   justify-content: center;
@@ -105,4 +111,8 @@ form button:hover {
 .fa-trash,
 .fa-check {
   pointer-events: none;
+}
+
+.disabled {
+  color: rgb(149, 148, 148);
 }
